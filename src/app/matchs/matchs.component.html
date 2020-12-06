@@ -1,0 +1,20 @@
+<div class ="container" fxLayoutGap="15%">
+
+    <mat-tab-group>
+        <mat-tab label="Ronde 1">
+            <ng-template matTabContent>
+                <pr-match [match]="matchsRonde1[i]" *ngFor="let match of matchsRonde1; let i = index;"></pr-match>
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="Ronde 2">
+            <ng-template matTabContent>
+                <pr-match [match]="matchsRonde2[i]" *ngFor="let match of matchsRonde2; let i = index;"></pr-match>
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="Ronde 3">
+            <ng-template matTabContent>
+                <pr-match [match]="matchsRonde3[i]" *ngFor="let match of matchsRonde3; let i = index;"></pr-match>
+            </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+</div>

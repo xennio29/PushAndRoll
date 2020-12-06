@@ -1,0 +1,26 @@
+<mat-toolbar>
+    <div class="home" routerLink="/home">
+        <mat-icon>home</mat-icon>
+        <span>Push and Roll</span>
+    </div>
+    <div class="not-home" fxLayout="row" fxLayoutGap="5%" fxLayoutAlign="center center">
+        <div class="menu" routerLink="/participants" routerLinkActive="is-active">
+            <span>Participants</span>
+        </div>
+        <div class="menu" routerLink="/rules" routerLinkActive="is-active">
+            <span>Réglement</span>
+        </div>
+        <div class="menu" routerLink="/pods" routerLinkActive="is-active">
+            <span>Pods</span>
+        </div>
+        <div class="menu" routerLink="/matchs" routerLinkActive="is-active">
+            <span>Matchs</span>
+        </div>
+        <div class="menu" routerLink="/rankings" routerLinkActive="is-active">
+            <span>Classement</span>
+        </div>
+    </div>
+    <div class="whiteLogo" class="whiteLogo" routerLink="/home" routerLinkActive="home-is-active">
+        <img [src]="whiteLogo" class="whiteLogo">
+    </div>
+</mat-toolbar>
