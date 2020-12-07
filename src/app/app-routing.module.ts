@@ -19,6 +19,7 @@ export const routes: Routes = [
   {path: 'matchs', component: MatchsComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent }
 ];
 

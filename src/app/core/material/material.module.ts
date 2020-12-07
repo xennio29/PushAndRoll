@@ -6,6 +6,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTableModule,
     MatSortModule,
     MatTabsModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   exports: [
     CommonModule,
@@ -27,6 +31,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTableModule,
     MatSortModule,
     MatTabsModule,
+    MatSidenavModule,
+    MatListModule,
   ]
 })
 export class MaterialModule { }
