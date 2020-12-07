@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  belugasLogo = '../../assets/img/redblack_logo.png';
+  belugasLogo = 'assets/img/redblack_logo.png';
 
   constructor() { }
 

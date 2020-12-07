@@ -8,7 +8,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 })
 export class MenuBarComponent implements OnInit {
 
-  whiteLogo = '../../assets/img/white_logo.png';
+  whiteLogo = 'assets/img/white_logo.png';
   rootName = '';
 
   @Output() public sidenavToggle = new EventEmitter();

@@ -43,6 +43,8 @@
               ],
               "optimization": true,
               "outputHashing": "all",
+              "baseHref": "/PushAndRoll/",
+              "deployUrl": "/PushAndRoll/",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
