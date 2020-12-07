@@ -66,7 +66,7 @@ export class Pod {
     getOriginOrClassLogo(): string {
         switch (this.name) {
             case OriginOrClass.Cultist:
-                return '../../assets/img/OriginOrClass/Cultist_TFT_icon.png';
+                return 'assets/img/OriginOrClass/Cultist_TFT_icon.png';
             case OriginOrClass.Divine:
                 return '';
             case OriginOrClass.Dusk:
@@ -86,15 +86,15 @@ export class Pod {
             case OriginOrClass.Warlord:
                 return '';
             case OriginOrClass.Assasin:
-                return '../../assets/img/OriginOrClass/Assassin_TFT_icon.png';
+                return 'assets/img/OriginOrClass/Assassin_TFT_icon.png';
             case OriginOrClass.Brawler:
-                return '../../assets/img/OriginOrClass/Brawler_TFT_icon.png';
+                return 'assets/img/OriginOrClass/Brawler_TFT_icon.png';
             case OriginOrClass.Dazzler:
                 return '';
             case OriginOrClass.Duelist:
                 return '';
             case OriginOrClass.Hunter:
-                return '../../assets/img/OriginOrClass/Hunter_TFT_icon.png';
+                return 'assets/img/OriginOrClass/Hunter_TFT_icon.png';
             case OriginOrClass.Keeper:
                 return '';
             case OriginOrClass.Mage:
@@ -104,7 +104,7 @@ export class Pod {
             case OriginOrClass.Sharpshooter:
                 return '';
             case OriginOrClass.Vanguard:
-                return '../../assets/img/OriginOrClass/Vanguard_TFT_icon.png';
+                return 'assets/img/OriginOrClass/Vanguard_TFT_icon.png';
 
         }
     }

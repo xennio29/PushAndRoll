@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuBarComponent implements OnInit {
 
-  whiteLogo = '../../assets/img/white_logo.png';
+  whiteLogo = 'assets/img/white_logo.png';
 
   constructor() { }
 
