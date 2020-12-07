@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push but only for the master branch
   push:
@@ -22,7 +22,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
       - name: Use Node 14.x
         uses: actions/setup-node@v1
         with:
@@ -33,11 +33,11 @@ jobs:
 
       - name: Build
         run: npm run release
-      
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: dist # The folder the action should deploy.
+          FOLDER: dist/push-and-roll-website # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
