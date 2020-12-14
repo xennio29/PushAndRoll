@@ -15,6 +15,7 @@ import { PodComponent } from './pods/pod/pod.component';
 import { MatchsComponent } from './matchs/matchs.component';
 import { MatchComponent } from './matchs/match/match.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,10 +29,11 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     PodComponent,
     MatchsComponent,
     MatchComponent,
-    SideBarComponent
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule

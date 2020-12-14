@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AllPseudos, PLAYERS } from 'src/app/data-model/data/playerData';
 import { Player } from 'src/app/data-model/model/player';
 import { OriginOrClassName, Pod } from 'src/app/data-model/model/pod';
 
@@ -12,7 +11,7 @@ export class PodComponent implements OnInit {
 
   @Input() pod: Pod;
 
-  playersPod: AllPseudos[] = [];
+  playersPod: string[] = [];
   logo: string;
   name: OriginOrClassName;
 

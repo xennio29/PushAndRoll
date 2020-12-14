@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PODS } from '../data-model/data/podData';
+import { DataService } from '../data-model/data/data.service';
+import { Pod } from '../data-model/model/pod';
 
 @Component({
   selector: 'pr-pods',
@@ -8,9 +9,11 @@ import { PODS } from '../data-model/data/podData';
 })
 export class PodsComponent implements OnInit {
 
-  pods = PODS;
+  pods: Pod[];
 
-  constructor() {}
+  constructor(private dataService: DataService) {
+    this.pods = this.dataService.pods;
+  }
 
   ngOnInit(): void {
   }
