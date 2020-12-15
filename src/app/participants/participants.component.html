@@ -4,12 +4,12 @@
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     
         <ng-container matColumnDef="lastName">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header class="w-30"> Nom </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="w-25"> Nom </th>
             <td mat-cell *matCellDef="let element" > {{element.lastName}} </td>
         </ng-container>
 
         <ng-container matColumnDef="firstName">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header class="w-30"> Prénom </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="w-25"> Prénom </th>
             <td mat-cell *matCellDef="let element"  > {{element.firstName}} </td>
         </ng-container>
 
@@ -18,8 +18,20 @@
             <td mat-cell *matCellDef="let element" > {{element.pseudo}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="challenges">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="w-20"> Défis </th>
+            <td mat-cell *matCellDef="let element" >
+                <mat-icon [ngClass]="{'lock': !element.challenges.missCalculation}" matTooltip="Perdre avec 50 po">calculate</mat-icon>
+                <mat-icon [ngClass]="{'lock': !element.challenges.FoN}" matTooltip="Fabriquer trois items avec une spatule">looks_3</mat-icon>
+                <mat-icon [ngClass]="{'lock': !element.challenges.quatreALaSuite}" matTooltip="Avoir la partie avec 4 items identiques">filter_4</mat-icon>
+                <mat-icon [ngClass]="{'lock': !element.challenges.oneV9}" matTooltip="Avoir une légendaire 3 étoiles">star</mat-icon>
+                <mat-icon [ngClass]="{'lock': !element.challenges.familyFirst}" matTooltip="Avoir une trait nécéssitant un élu et une spatule">family_restroom</mat-icon>
+                <mat-icon [ngClass]="{'lock': !element.challenges.turboHighrolleur}" matTooltip="Avoir 5 champion 3 étoiles">refresh</mat-icon>
+            </td>
+        </ng-container>
+
         <ng-container matColumnDef="agence">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header class="w-20"> Agence </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="w-10"> Agence </th>
             <td mat-cell *matCellDef="let element" > {{element.agence}} </td>
         </ng-container>
 

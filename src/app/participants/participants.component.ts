@@ -12,7 +12,7 @@ export class ParticipantsComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  displayedColumns = ['lastName', 'firstName', 'pseudo', 'agence'];
+  displayedColumns = ['lastName', 'firstName', 'pseudo', 'challenges', 'agence'];
 
   participants = [];
   dataSource;

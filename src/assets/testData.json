@@ -7,7 +7,11 @@
 			"firstName": "Tahm Kench",
 			"lastName": "TFT",
 			"pseudo": "Tatam",
-			"agence": 1026
+			"agence": 1026,
+			"challenges": {
+				"missCalculation" : true,
+				"turboHighrolleur" : true
+			}
 		},
 		{
 			"id": 2,
@@ -28,7 +32,10 @@
 			"firstName": "Sett",
 			"lastName": "TFT",
 			"pseudo": "sept",
-			"agence": 1026
+			"agence": 1026,
+			"challenges": {
+				"oneV9" : true
+			}
 		},
 
 		{
@@ -36,14 +43,21 @@
 			"firstName": "Wukong",
 			"lastName": "TFT",
 			"pseudo": "Wuk0ng",
-			"agence": 1026
+			"agence": 1026,
+			"challenges": {
+				"missCalculation" : true
+			}
 		},
 		{
 			"id": 6,
 			"firstName": "Garen",
 			"lastName": "TFT",
 			"pseudo": "DEMACIA",
-			"agence": 1026
+			"agence": 1026,
+			"challenges": {
+				"familyFirst" : true,
+				"missCalculation" : true
+			}
 		},
 		{
 			"id": 7,
@@ -57,7 +71,11 @@
 			"firstName": "Sejuani",
 			"lastName": "TFT",
 			"pseudo": "leCochon",
-			"agence": 1026
+			"agence": 1026,
+			"challenges": {
+				"quatreALaSuite" : true,
+				"FoN" : true
+			}
 		},
 
 		{
@@ -72,7 +90,10 @@
 			"firstName": "Kindred",
 			"lastName": "TFT",
 			"pseudo": "lamb",
-			"agence": 1026
+			"agence": 1026,
+			"challenges": {
+				"turboHighrolleur" : true
+			}
 		},
 		{
 			"id": 11,
@@ -101,20 +122,34 @@
 			"firstName": "Akali",
 			"lastName": "TFT",
 			"pseudo": "NinjaGirl",
-			"agence": 1026
+			"agence": 1026,
+			"challenges": {
+				"quatreALaSuite" : true
+			}
 		},
 		{
 			"id": 15,
 			"firstName": "katarina",
 			"lastName": "TFT",
 			"pseudo": "SpinGirl",
-			"agence": 1026
+			"agence": 1026,
+			"challenges": {
+				"familyFirst" : true,
+				"FoN" : true
+			}
 		},
 		{
 			"id": 16,
 			"firstName": "Talon",
 			"lastName": "TFT",
 			"pseudo": "exMVP",
+			"agence": 1026
+		},
+		{
+			"id": 17,
+			"firstName": "Janna",
+			"lastName": "TFT",
+			"pseudo": "ImTheWind",
 			"agence": 1026
 		}
 

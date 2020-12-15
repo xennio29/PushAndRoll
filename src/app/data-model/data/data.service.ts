@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import * as testData from '../../../assets/testData.json';
 import { Match } from '../model/match';
-import { Agence, Player } from '../model/player';
+import { Agence, Challenges, Player } from '../model/player';
 import { OriginOrClass, Pod } from '../model/pod';
 
 @Injectable({
@@ -86,7 +86,14 @@ export class DataService {
       player.firstName,
       player.lastName,
       player.pseudo,
-      this.getAgence(player.agence)
+      this.getAgence(player.agence),
+      new Challenges(
+        player.challenges?.missCalculation,
+        player.challenges?.FoN,
+        player.challenges?.quatreALaSuite,
+        player.challenges?.oneV9,
+        player.challenges?.familyFirst,
+        player.challenges?.turboHighrolleur)
     );
   }
 
@@ -110,6 +117,10 @@ export class DataService {
       tournamentPods.push(this.toPodDomain(pod));      
     });
 
+    this.checkDoublons(tournamentPods);
+
+    this.checkNoPodPlayer(tournamentPods);
+
     return tournamentPods;
   }
 
@@ -132,7 +143,37 @@ export class DataService {
       console.error('[DATA ERROR FOR POD]: wrong playerID : ', playerId);
       return undefined;
     }
-    
+  }
+
+  private checkDoublons(tournamentPods: Pod[]) {
+
+    const allPlayer: string[] = [];
+
+    tournamentPods.forEach(pod => {
+      pod.playersPseudo.forEach(playerPseudo => {
+        if(allPlayer.indexOf(playerPseudo) === -1) {
+          allPlayer.push(playerPseudo);
+        } else {
+          console.error('[DATA ERROR FOR POD]: player', playerPseudo, 'in more than one pod');
+        }
+      });
+    });
+
+  }
+
+  private checkNoPodPlayer (tournamentPods: Pod[]) {
+    const players = [...this._players];
+
+    tournamentPods.forEach(pod => {
+
+      pod.playersPseudo.forEach(playerPseudo => {
+        players.splice(players.findIndex(player => player.pseudo === playerPseudo), 1)
+      });
+      
+    });
+
+    console.error('[DATA ERROR FOR PLAYER]: No pod for this player', players);
+
   }
   
   // MATCH CONSTRUCTION

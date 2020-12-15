@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { DataService } from '../data-model/data/data.service';
 import { Match } from '../data-model/model/match';
+import { Player } from '../data-model/model/player';
 
 @Component({
   selector: 'pr-rankings',
@@ -26,7 +27,7 @@ export class RankingsComponent implements OnInit {
     const rankPlayers: RankPlayer[] = [];
 
     this.dataService.players.forEach( player => {
-      rankPlayers.push(new RankPlayer(player.pseudo));
+      rankPlayers.push(new RankPlayer(player));
     });
 
     this.computeScore(rankPlayers);
@@ -46,8 +47,6 @@ export class RankingsComponent implements OnInit {
     this.computeScoreForMatch(rankPlayers, this.dataService.matchsRonde1);
     this.computeScoreForMatch(rankPlayers, this.dataService.matchsRonde2);
     this.computeScoreForMatch(rankPlayers, this.dataService.matchsRonde3);
-
-    this.computeScoreBonus(rankPlayers);
 
   }
 
@@ -76,11 +75,6 @@ export class RankingsComponent implements OnInit {
     
   }
 
-  computeScoreBonus(rankPlayers: RankPlayer[]) {
-
-    // TODO : add bonus point for sucess challenge
-  }
-
 }
 
 class RankPlayer {
@@ -88,9 +82,18 @@ class RankPlayer {
   public readonly pseudo: string;
   public score: number;
 
-  constructor(pseudo) {
-    this.pseudo = pseudo;
+  constructor(player: Player) {
+    this.pseudo = player.pseudo;
     this.score = 0;
+    if (player.challenges) {
+      if (player.challenges.missCalculation) { this.addScore(1); }
+      if (player.challenges.FoN) { this.addScore(1); }
+      if (player.challenges.quatreALaSuite) { this.addScore(1); }
+      if (player.challenges.oneV9) { this.addScore(1); }
+      if (player.challenges.familyFirst) { this.addScore(1); }
+      if (player.challenges.turboHighrolleur) { this.addScore(1); }
+    }
+    
   }
 
   addScore(score: number): void {

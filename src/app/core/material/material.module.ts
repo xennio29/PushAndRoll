@@ -8,6 +8,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { MatListModule } from '@angular/material/list';
     MatTabsModule,
     MatSidenavModule,
     MatListModule,
+    MatTooltipModule
   ],
   exports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { MatListModule } from '@angular/material/list';
     MatTabsModule,
     MatSidenavModule,
     MatListModule,
+    MatTooltipModule
   ]
 })
 export class MaterialModule { }
