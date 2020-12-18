@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MATCHSRONDE1, MATCHSRONDE2, MATCHSRONDE3 } from '../data-model/data/matchData';
+import { DataService } from '../data-model/data/data.service';
+import { Match } from '../data-model/model/match';
 
 @Component({
   selector: 'pr-matchs',
@@ -8,11 +9,15 @@ import { MATCHSRONDE1, MATCHSRONDE2, MATCHSRONDE3 } from '../data-model/data/mat
 })
 export class MatchsComponent implements OnInit {
 
-  matchsRonde1 = MATCHSRONDE1;
-  matchsRonde2 = MATCHSRONDE2;
-  matchsRonde3 = MATCHSRONDE3;
+  matchsRonde1: Match[];
+  matchsRonde2: Match[];
+  matchsRonde3: Match[];
 
-  constructor() { }
+  constructor(private dataService: DataService) { 
+    this.matchsRonde1 = this.dataService.matchsRonde1;
+    this.matchsRonde2 = this.dataService.matchsRonde2;
+    this.matchsRonde3 = this.dataService.matchsRonde3;
+  }
 
   ngOnInit(): void {
   }

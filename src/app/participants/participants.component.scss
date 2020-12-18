@@ -7,10 +7,34 @@ table {
     width: 100%;
 }
 
+.w-50 {
+    width: 50%;
+}
+
 .w-30 {
     width: 30%;
 }
 
+.w-25 {
+    width: 25%;
+}
+
 .w-20 {
     width: 20%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.challenges {
+    min-width: 50px;
+}
+
+mat-icon {
+    cursor: default;
+}
+
+.lock {
+    color: lightgray;
 }

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { PLAYERS } from 'src/app/data-model/data/playerData';
 import { Match } from 'src/app/data-model/model/match';
 
 @Component({
@@ -36,14 +35,21 @@ export class MatchComponent implements OnInit {
     const playerScores: PlayerScore[] = [];
 
     if (this.match.place1) {
-      playerScores.push(new PlayerScore(this.match.place8, 8));
-      playerScores.push(new PlayerScore(this.match.place7, 7));
       playerScores.push(new PlayerScore(this.match.place6, 6));
       playerScores.push(new PlayerScore(this.match.place5, 5));
       playerScores.push(new PlayerScore(this.match.place4, 4));
       playerScores.push(new PlayerScore(this.match.place3, 3));
       playerScores.push(new PlayerScore(this.match.place2, 2));
       playerScores.push(new PlayerScore(this.match.place1, 1));
+
+      if(this.match.place7) {
+        playerScores.push(new PlayerScore(this.match.place7, 7));
+      }
+      if(this.match.place8) {
+        playerScores.push(new PlayerScore(this.match.place8, 8));
+      }
+      
+
       playerScores.sort( (a, b) => a.playerRank - b.playerRank);
 
     } else {

@@ -1,13 +1,10 @@
-import { AllPseudos } from '../data/playerData';
-import { Player } from './player';
-
 export class Pod {
 
     public name: OriginOrClass;
-    public readonly playersPseudo: AllPseudos[] = [];
+    public readonly playersPseudo: string[] = [];
 
     constructor(name: OriginOrClass,
-                player1: AllPseudos, player2: AllPseudos, player3: AllPseudos, player4: AllPseudos) {
+                player1: string, player2: string, player3: string, player4: string) {
         this.name = name;
         this.playersPseudo.push(player1);
         this.playersPseudo.push(player2);
@@ -25,7 +22,7 @@ export class Pod {
                 return new OriginOrClassName('Divine', 'Divin');
             case OriginOrClass.Dusk:
                 return new OriginOrClassName('Dusk', 'Crépuscule');
-            case OriginOrClass.Enligntened:
+            case OriginOrClass.Enlightened:
                 return new OriginOrClassName('Enligntened', 'Sage');
             case OriginOrClass.Elderwood:
                 return new OriginOrClassName('Elderwood', 'Sylvestre');
@@ -71,7 +68,7 @@ export class Pod {
                 return '';
             case OriginOrClass.Dusk:
                 return '';
-            case OriginOrClass.Enligntened:
+            case OriginOrClass.Enlightened:
                 return '';
             case OriginOrClass.Elderwood:
                 return '';
@@ -115,7 +112,7 @@ export enum OriginOrClass {
     Cultist,
     Divine,
     Dusk,
-    Enligntened,
+    Enlightened,
     Elderwood,
     Fortune,
     Moonlight,

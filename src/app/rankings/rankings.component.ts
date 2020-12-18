@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { MATCHSRONDE1 } from '../data-model/data/matchData';
-import { AllPseudos, PLAYERS } from '../data-model/data/playerData';
+import { DataService } from '../data-model/data/data.service';
+import { Match } from '../data-model/model/match';
+import { Player } from '../data-model/model/player';
 
 @Component({
   selector: 'pr-rankings',
@@ -15,7 +16,7 @@ export class RankingsComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.generateDataSource();
@@ -25,8 +26,8 @@ export class RankingsComponent implements OnInit {
 
     const rankPlayers: RankPlayer[] = [];
 
-    PLAYERS.forEach( player => {
-      rankPlayers.push(new RankPlayer(player.pseudo));
+    this.dataService.players.forEach( player => {
+      rankPlayers.push(new RankPlayer(player));
     });
 
     this.computeScore(rankPlayers);
@@ -43,10 +44,15 @@ export class RankingsComponent implements OnInit {
 
   computeScore(rankPlayers: RankPlayer[]): void {
 
-    console.log(rankPlayers);
+    this.computeScoreForMatch(rankPlayers, this.dataService.matchsRonde1);
+    this.computeScoreForMatch(rankPlayers, this.dataService.matchsRonde2);
+    this.computeScoreForMatch(rankPlayers, this.dataService.matchsRonde3);
 
-    // Compute score for ronde 1
-    MATCHSRONDE1.forEach (match => {
+  }
+
+  computeScoreForMatch(rankPlayers: RankPlayer[], ronde: Match[]) {
+
+    ronde.forEach (match => {
 
       if (match.place1) {
         rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place1).addScore(10);
@@ -55,33 +61,39 @@ export class RankingsComponent implements OnInit {
         rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place4).addScore(6);
         rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place5).addScore(4);
         rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place6).addScore(3);
-      }
+        
+        if (match.place7) {
+          rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place7).addScore(2);
+        }
+  
+        if (match.place8) {
+          rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place8).addScore(1);
+        }
 
-      if (match.place7) {
-        rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place7).addScore(2);
       }
-
-      if (match.place8) {
-        rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place8).addScore(1);
-      }
-
     });
-
+    
   }
 
 }
 
 class RankPlayer {
 
-  public readonly pseudo: AllPseudos;
+  public readonly pseudo: string;
   public score: number;
 
-
-  constructor(pseudo) {
-
-    this.pseudo = pseudo;
+  constructor(player: Player) {
+    this.pseudo = player.pseudo;
     this.score = 0;
-
+    if (player.challenges) {
+      if (player.challenges.missCalculation) { this.addScore(1); }
+      if (player.challenges.FoN) { this.addScore(1); }
+      if (player.challenges.quatreALaSuite) { this.addScore(1); }
+      if (player.challenges.oneV9) { this.addScore(1); }
+      if (player.challenges.familyFirst) { this.addScore(1); }
+      if (player.challenges.turboHighrolleur) { this.addScore(1); }
+    }
+    
   }
 
   addScore(score: number): void {

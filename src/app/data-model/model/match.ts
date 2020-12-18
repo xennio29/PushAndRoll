@@ -1,30 +1,29 @@
-import { AllPseudos, PLAYERS } from '../data/playerData';
 import { Pod } from './pod';
 
 export class Match {
     public pod1: Pod;
     public pod2: Pod;
 
-    public place1: AllPseudos;
-    public place2: AllPseudos;
-    public place3: AllPseudos;
-    public place4: AllPseudos;
-    public place5: AllPseudos;
-    public place6: AllPseudos;
-    public place7: AllPseudos;
-    public place8: AllPseudos;
+    public place1: string;
+    public place2: string;
+    public place3: string;
+    public place4: string;
+    public place5: string;
+    public place6: string;
+    public place7: string;
+    public place8: string;
 
     constructor(
         pod1: Pod,
         pod2: Pod,
-        place1?: AllPseudos,
-        place2?: AllPseudos,
-        place3?: AllPseudos,
-        place4?: AllPseudos,
-        place5?: AllPseudos,
-        place6?: AllPseudos,
-        place7?: AllPseudos,
-        place8?: AllPseudos,
+        place1?: string,
+        place2?: string,
+        place3?: string,
+        place4?: string,
+        place5?: string,
+        place6?: string,
+        place7?: string,
+        place8?: string,
     ) {
         this.pod1 = pod1;
         this.pod2 = pod2;
@@ -37,20 +36,6 @@ export class Match {
         this.place3 = place3;
         this.place2 = place2;
         this.place1 = place1;
-
-        /*
-        console.log(this.pod1);
-        console.log(this.pod2);
-
-        console.log(this.place1);
-        console.log(this.place2);
-        console.log(this.place3);
-        console.log(this.place4);
-        console.log(this.place5);
-        console.log(this.place6);
-        console.log(this.place7);
-        console.log(this.place8);
-        */
 
         if (!this.checkPseudoInPod()) {
             console.error('[ERROR in result] call an admin');
@@ -97,22 +82,18 @@ export class Match {
 
     }
 
-    checkAPlayer(pseudo: AllPseudos): boolean {
+    checkAPlayer(pseudo: string): boolean {
 
-        if (pseudo) {
-            // Check player is in pod1 and pod2
-            const matchPod1 = this.pod1.playersPseudo.find( p => p === pseudo) !== undefined;
-            const matchPod2 = this.pod2.playersPseudo.find( p => p === pseudo) !== undefined;
-            if (!matchPod1 && !matchPod2) {
-                console.error('this player is in neither pod : ', pseudo);
-                return false;
-            } else {
-                return true;
-            }
-
-        } else {
-            console.error('wrong name player : ', pseudo);
+        // Check player is in pod1 and pod2
+        const matchPod1 = this.pod1.playersPseudo.find( p => p === pseudo) !== undefined;
+        const matchPod2 = this.pod2.playersPseudo.find( p => p === pseudo) !== undefined;
+        if (!matchPod1 && !matchPod2) {
+            console.error('[DATA ERROR FOR MATCH', this.pod1.getOriginOrClassName().english,
+                '&', this.pod2.getOriginOrClassName().english,
+                ']: player', pseudo, 'is in neither pod');
             return false;
+        } else {
+            return true;
         }
 
     }
