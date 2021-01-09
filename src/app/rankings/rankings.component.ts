@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { DataService } from '../data-model/data/data.service';
+import { forkJoin } from 'rxjs';
+import { DataService, DataType } from '../data-model/data/data.service';
 import { Match } from '../data-model/model/match';
 import { Player } from '../data-model/model/player';
 
@@ -14,19 +15,41 @@ export class RankingsComponent implements OnInit {
   displayedColumns = ['rank', 'pseudo', 'score'];
   dataSource = new MatTableDataSource<RankPlayer>([]);
 
+  players: Player[];
+  matchsRonde1: Match[];
+  matchsRonde2: Match[];
+  matchsRonde3: Match[];
+
+  constructor(private dataService: DataService) {
+
+    this.dataService.playerEmitter.subscribe( result => {
+      this.players = result;
+    });
+
+    this.dataService.ronde1Emitter.subscribe( result => {
+      this.matchsRonde1 = result;
+    });
+    this.dataService.ronde2Emitter.subscribe( result => {
+      this.matchsRonde2 = result;
+    });
+    this.dataService.ronde3Emitter.subscribe( result => {
+      this.matchsRonde3 = result;
+      this.generateDataSource();
+    });
+
+    this.dataService.askData(DataType.Players, DataType.Ronde1, DataType.Ronde2, DataType.Ronde3);
 
 
-  constructor(private dataService: DataService) { }
+  }
 
   ngOnInit(): void {
-    this.generateDataSource();
   }
 
   generateDataSource(): void {
 
     const rankPlayers: RankPlayer[] = [];
 
-    this.dataService.players.forEach( player => {
+    this.players.forEach( player => {
       rankPlayers.push(new RankPlayer(player));
     });
 
@@ -44,9 +67,9 @@ export class RankingsComponent implements OnInit {
 
   computeScore(rankPlayers: RankPlayer[]): void {
 
-    this.computeScoreForMatch(rankPlayers, this.dataService.matchsRonde1);
-    this.computeScoreForMatch(rankPlayers, this.dataService.matchsRonde2);
-    this.computeScoreForMatch(rankPlayers, this.dataService.matchsRonde3);
+    this.computeScoreForMatch(rankPlayers, this.matchsRonde1);
+    this.computeScoreForMatch(rankPlayers, this.matchsRonde2);
+    this.computeScoreForMatch(rankPlayers, this.matchsRonde3);
 
   }
 

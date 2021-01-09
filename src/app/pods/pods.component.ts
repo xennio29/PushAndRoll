@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data-model/data/data.service';
+import { DataService, DataType } from '../data-model/data/data.service';
 import { Pod } from '../data-model/model/pod';
 
 @Component({
@@ -9,13 +9,17 @@ import { Pod } from '../data-model/model/pod';
 })
 export class PodsComponent implements OnInit {
 
-  pods: Pod[];
+  pods: Pod[] = [];
 
   constructor(private dataService: DataService) {
-    this.pods = this.dataService.pods;
+    this.dataService.podEmitter.subscribe( result => {
+      this.pods = result;
+    });
+
   }
 
   ngOnInit(): void {
+    this.dataService.askData(DataType.Pods);
   }
 
 }
