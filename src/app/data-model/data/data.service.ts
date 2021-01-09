@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
+import { EventEmitter } from '@angular/core';
 import { Injectable, OnInit } from '@angular/core';
-import * as testData from '../../../assets/testData.json';
+import { Observable } from 'rxjs';
 import { Match } from '../model/match';
 import { Agence, Challenges, Player } from '../model/player';
 import { OriginOrClass, Pod } from '../model/pod';
@@ -16,55 +17,84 @@ export class DataService {
   private _matchsRonde2: Match[];
   private _matchsRonde3: Match[];
 
+  public playerEmitter: EventEmitter<Player[]>;
+  public podEmitter: EventEmitter<Pod[]>;
+  public ronde1Emitter: EventEmitter<Match[]>;
+  public ronde2Emitter: EventEmitter<Match[]>;
+  public ronde3Emitter: EventEmitter<Match[]>;
+
+  loaded = false;
+
   constructor(private http: HttpClient) { 
 
-    /** real call/
-    this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/data.json').subscribe(data => {
-      console.log('hello there');
-      console.log(data);
-    });
-    **/
-
-    console.log('Welcome to ' + testData.tournamentName);
-
-    this._players = this.constructPlayers(testData.players);
-    console.log(this._players.length + ' players imported.');
-
-    this._pods = this.constructPods(testData.pods);
-    console.log(this._pods.length + ' pods imported.');
-
-    this._matchsRonde1 = this.constructMatchs(testData.matchsRonde1);
-    console.log(this._matchsRonde1.length + ' matchs imported for ronde 1');
-
-    this._matchsRonde2 = this.constructMatchs(testData.matchsRonde2);
-    console.log(this._matchsRonde2.length + ' matchs imported for ronde 2');
-
-    this._matchsRonde3 = this.constructMatchs(testData.matchsRonde3);
-    console.log(this._matchsRonde3.length + ' matchs imported for ronde 3');
+    this.playerEmitter = new EventEmitter();
+    this.podEmitter = new EventEmitter();
+    this.ronde1Emitter = new EventEmitter();
+    this.ronde2Emitter = new EventEmitter();
+    this.ronde3Emitter = new EventEmitter();
 
   }
 
-  // GETTERS
+
+  loadData(): Observable<any> {
+
+    return new Observable<any> ((observer) => {
+
+      this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/testData.json').subscribe(data => {
+  
+        console.log('Welcome to ' + data.tournamentName);
+  
+        this._players = this.constructPlayers(data.players);
+        console.log(this._players.length + ' players imported.');
+  
+        this._pods = this.constructPods(data.pods);
+        console.log(this._pods.length + ' pods imported.');
+  
+        this._matchsRonde1 = this.constructMatchs(data.matchsRonde1);
+        console.log(this._matchsRonde1.length + ' matchs imported for ronde 1');
+  
+        this._matchsRonde2 = this.constructMatchs(data.matchsRonde2);
+        console.log(this._matchsRonde2.length + ' matchs imported for ronde 2');
+  
+        this._matchsRonde3 = this.constructMatchs(data.matchsRonde3);
+        console.log(this._matchsRonde3.length + ' matchs imported for ronde 3');
+
+        observer.complete();
+      });
+
+    });
+
+  }
+
+  // ASKER
   //////////////////////
 
-  get players() {
-    return this._players;
+  askData(...datasType: DataType[]) {
+
+    if(!this.loaded) {
+      this.loadData().subscribe({
+        complete: () => {
+          this.loaded = true;
+          this.emitData(...datasType);
+        }
+      });
+    } else {
+      this.emitData(...datasType);
+    }
+
   }
 
-  get pods() {
-    return this._pods;
-  }
+  private emitData(...datasType: DataType[]) {
 
-  get matchsRonde1() {
-    return this._matchsRonde1;
-  }
-
-  get matchsRonde2() {
-    return this._matchsRonde2;
-  }
-
-  get matchsRonde3() {
-    return this._matchsRonde3;
+    datasType.forEach( dataType => {
+      switch (dataType) {
+        case DataType.Players: this.playerEmitter.emit(this._players);
+        case DataType.Pods: this.podEmitter.emit(this._pods);
+        case DataType.Ronde1: this.ronde1Emitter.emit(this._matchsRonde1);
+        case DataType.Ronde2: this.ronde2Emitter.emit(this._matchsRonde2);
+        case DataType.Ronde3: this.ronde3Emitter.emit(this._matchsRonde3);
+      }
+    })
   }
 
   // PLAYER CONSTRUCTION
@@ -261,4 +291,12 @@ export class DataService {
     }
   }
 
+}
+
+export enum DataType {
+  Players,
+  Pods,
+  Ronde1,
+  Ronde2,
+  Ronde3
 }
