@@ -4,153 +4,102 @@
 	"players": [
 		{
 			"id": 1,
-			"firstName": "Tahm Kench",
-			"lastName": "TFT",
-			"pseudo": "Tatam",
-			"agence": 1026,
+			"firstName": "Laetitia",
+			"lastName": "Praynet",
+			"pseudo": "Luckymarmotte",
+			"agence": 0,
 			"challenges": {
-				"missCalculation" : true,
-				"turboHighrolleur" : true
 			}
 		},
 		{
 			"id": 2,
-			"firstName": "Sylas",
-			"lastName": "TFT",
-			"pseudo": "ssssylas",
-			"agence": 1026
+			"firstName": "Jouet",
+			"lastName": "Jérémy",
+			"pseudo": "Xeyway",
+			"agence": 588,
+			"challenges": {
+			}
 		},
 		{
 			"id": 3,
-			"firstName": "Nunu",
-			"lastName": "TFT",
-			"pseudo": "nounou",
-			"agence": 1026
+			"firstName": "Feth-Allah",
+			"lastName": "Bentoumi",
+			"pseudo": "DKingyo",
+			"agence": 588,
+			"challenges": {
+			}
 		},
 		{
 			"id": 4,
-			"firstName": "Sett",
-			"lastName": "TFT",
-			"pseudo": "sept",
-			"agence": 1026,
+			"firstName": "Pierre",
+			"lastName": "Stacke",
+			"pseudo": "Whilsker",
+			"agence": 588,
 			"challenges": {
-				"oneV9" : true
 			}
 		},
 
 		{
 			"id": 5,
-			"firstName": "Wukong",
-			"lastName": "TFT",
-			"pseudo": "Wuk0ng",
-			"agence": 1026,
+			"firstName": "Quentin",
+			"lastName": "Veyssade",
+			"pseudo": "Ussoper",
+			"agence": 4040,
 			"challenges": {
-				"missCalculation" : true
 			}
 		},
 		{
 			"id": 6,
-			"firstName": "Garen",
-			"lastName": "TFT",
-			"pseudo": "DEMACIA",
-			"agence": 1026,
+			"firstName": "Quentin",
+			"lastName": "Pottier",
+			"pseudo": "Iluvatarr",
+			"agence": 588,
 			"challenges": {
-				"familyFirst" : true,
-				"missCalculation" : true
 			}
 		},
 		{
 			"id": 7,
-			"firstName": "Aatrox",
-			"lastName": "TFT",
-			"pseudo": "SwordMan",
-			"agence": 1026
+			"firstName": "Florian",
+			"lastName": "Schall",
+			"pseudo": "Zylboxx",
+			"agence": 1024,
+			"challenges": {
+			}
 		},
 		{
 			"id": 8,
-			"firstName": "Sejuani",
-			"lastName": "TFT",
-			"pseudo": "leCochon",
-			"agence": 1026,
+			"firstName": "Alexandre",
+			"lastName": "Groussier",
+			"pseudo": "iOvz",
+			"agence": 588,
 			"challenges": {
-				"quatreALaSuite" : true,
-				"FoN" : true
 			}
 		},
 
 		{
 			"id": 9,
-			"firstName": "Aphelios",
-			"lastName": "TFT",
-			"pseudo": "WeaponGuy",
+			"firstName": "Valentin",
+			"lastName": "Dales",
+			"pseudo": "Aelgaid",
 			"agence": 1026
 		},
 		{
 			"id": 10,
-			"firstName": "Kindred",
-			"lastName": "TFT",
-			"pseudo": "lamb",
-			"agence": 1026,
+			"firstName": "Thibault",
+			"lastName": "Janssen",
+			"pseudo": "SupraSky",
+			"agence": 588,
 			"challenges": {
-				"turboHighrolleur" : true
 			}
 		},
 		{
 			"id": 11,
-			"firstName": "Ashe",
-			"lastName": "TFT",
-			"pseudo": "QueenOfTheNorth",
-			"agence": 1026
-		},
-		{
-			"id": 12,
-			"firstName": "Warwick",
-			"lastName": "TFT",
-			"pseudo": "WoufWouf",
-			"agence": 1026
-		},
-
-		{
-			"id": 13,
-			"firstName": "Pike",
-			"lastName": "TFT",
-			"pseudo": "Sharknado",
-			"agence": 1026
-		},
-		{
-			"id": 14,
-			"firstName": "Akali",
-			"lastName": "TFT",
-			"pseudo": "NinjaGirl",
-			"agence": 1026,
+			"firstName": "Sebastien",
+			"lastName": "Poussard",
+			"pseudo": "Andreaoun",
+			"agence": 588,
 			"challenges": {
-				"quatreALaSuite" : true
 			}
-		},
-		{
-			"id": 15,
-			"firstName": "katarina",
-			"lastName": "TFT",
-			"pseudo": "SpinGirl",
-			"agence": 1026,
-			"challenges": {
-				"familyFirst" : true,
-				"FoN" : true
-			}
-		},
-		{
-			"id": 16,
-			"firstName": "Talon",
-			"lastName": "TFT",
-			"pseudo": "exMVP",
-			"agence": 1026
-		},
-		{
-			"id": 17,
-			"firstName": "Janna",
-			"lastName": "TFT",
-			"pseudo": "ImTheWind",
-			"agence": 1026
 		}
 
 	],
@@ -176,13 +125,6 @@
 			"player2" : 10,
 			"player3" : 11,
 			"player4" : 12
-		},
-		{
-			"OriginOrClass" : "Assasin",
-			"player1" : 13,
-			"player2" : 14,
-			"player3" : 15,
-			"player4" : 16
 		}
 	],
 
@@ -190,26 +132,10 @@
 		{
 			"pod1" : "Brawler",
 			"pod2" : "Vanguard",
-			"place1" : "leCochon",
-			"place2" : "DEMACIA",
-			"place3" : "Tatam",
-			"place4" : "Wuk0ng",
-			"place5" : "nounou",
-			"place6" : "sept",
-			"place7" : "ssssylas",
-			"place8" : "SwordMan"
 		},
 		{
 			"pod1" : "Hunter",
 			"pod2" : "Assasin",
-			"place1" : "WoufWouf",
-			"place2" : "NinjaGirl",
-			"place3" : "Sharknado",
-			"place4" : "QueenOfTheNorth",
-			"place5" : "lamb",
-			"place6" : "SpinGirl",
-			"place7" : "WeaponGuy",
-			"place8" : "exMVP"
 		}
 	],
 
