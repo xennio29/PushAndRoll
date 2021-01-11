@@ -118,11 +118,11 @@
 	"matchsRonde1" : [
 		{
 			"pod1" : "Brawler",
-			"pod2" : "Vanguard",
+			"pod2" : "Vanguard"
 		},
 		{
 			"pod1" : "Hunter",
-			"pod2" : "Assasin",
+			"pod2" : "Assasin"
 		}
 	],
 
