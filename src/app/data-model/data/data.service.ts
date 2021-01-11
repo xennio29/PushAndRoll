@@ -40,7 +40,7 @@ export class DataService {
 
     return new Observable<any> ((observer) => {
 
-      this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/testData.json').subscribe(data => {
+      this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/tournamentData.json').subscribe(data => {
   
         console.log('Welcome to ' + data.tournamentName);
   
