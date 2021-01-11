@@ -7,7 +7,7 @@
 			"firstName": "Laetitia",
 			"lastName": "Praynet",
 			"pseudo": "Luckymarmotte",
-			"agence": 0
+			"agence": 1
 		},
 		{
 			"id": 2,
@@ -30,7 +30,6 @@
 			"pseudo": "Whilsker",
 			"agence": 588
 		},
-
 		{
 			"id": 5,
 			"firstName": "Quentin",
@@ -59,7 +58,6 @@
 			"pseudo": "iOvz",
 			"agence": 588
 		},
-
 		{
 			"id": 9,
 			"firstName": "Valentin",
@@ -86,7 +84,7 @@
 			"firstName": "Jonathan",
 			"lastName": "Vidal",
 			"pseudo": "Poupinou",
-			"agence": 0
+			"agence": 1
 		}
 
 	],
