@@ -98,14 +98,14 @@
 			"player4" : 4
 		},
 		{
-			"OriginOrClass" : "Vanguard",
+			"OriginOrClass" : "Hunter",
 			"player1" : 5,
 			"player2" : 6,
 			"player3" : 7,
 			"player4" : 8
 		},
 		{
-			"OriginOrClass" : "Hunter",
+			"OriginOrClass" : "Elderwood",
 			"player1" : 9,
 			"player2" : 10,
 			"player3" : 11,
@@ -116,33 +116,21 @@
 	"matchsRonde1" : [
 		{
 			"pod1" : "Brawler",
-			"pod2" : "Vanguard"
-		},
-		{
-			"pod1" : "Hunter",
-			"pod2" : "Assasin"
+			"pod2" : "Hunter"
 		}
 	],
 
 	"matchsRonde2" : [
 		{
 			"pod1" : "Brawler",
-			"pod2" : "Hunter"
-		},
-		{
-			"pod1" : "Assasin",
-			"pod2" : "Vanguard"
+			"pod2" : "Elderwood"
 		}
 	],
 
 	"matchsRonde3" : [
 		{
-			"pod1" : "Brawler",
-			"pod2" : "Assasin"
-		},
-		{
-			"pod1" : "Vanguard",
-			"pod2" : "Hunter"
+			"pod1" : "Hunter",
+			"pod2" : "Elderwood"
 		}
 	]
 }
