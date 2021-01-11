@@ -101,14 +101,14 @@
 			"OriginOrClass" : "Hunter",
 			"player1" : 5,
 			"player2" : 6,
-			"player3" : 7,
+			"player3" : 11,
 			"player4" : 8
 		},
 		{
 			"OriginOrClass" : "Elderwood",
 			"player1" : 9,
 			"player2" : 10,
-			"player3" : 11,
+			"player3" : 7,
 			"player4" : 12
 		}
 	],
