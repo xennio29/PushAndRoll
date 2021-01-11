@@ -41,7 +41,13 @@ export class Player {
 
 // TODO : fill with more data
 export enum Agence {
-    Aeroline1026 = '1026 - Aeroline'
+    Aeroline1026 = '1026 - Aeroline',
+    Agence588 = '588',
+    agence1024 = '1024',
+    agence1030 = '1030',
+    agence1205 = '1205',
+    agence4040 = '4040',
+    agenceOther ='mysterous agence'
 }
 
 // TODO fill with real challenge
