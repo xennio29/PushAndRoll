@@ -71,7 +71,7 @@ export class Pod {
             case OriginOrClass.Enlightened:
                 return '';
             case OriginOrClass.Elderwood:
-                return '';
+                return 'assets/img/OriginOrClass/Elderwood_TFT_icon.png';
             case OriginOrClass.Fortune:
                 return '';
             case OriginOrClass.Moonlight:
