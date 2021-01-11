@@ -132,8 +132,18 @@ export class DataService {
     switch(agenceNumber) {
       case 1026:
         return Agence.Aeroline1026;
+      case 588:
+        return Agence.Agence588;
+      case 1024:
+        return Agence.agence1024;
+      case 1030: 
+        return Agence.agence1030;
+      case 1205:
+        return Agence.agence1205;
+      case 4040:
+        return Agence.agence4040;
       default:
-        return null;
+        return Agence.agenceOther;
     }
   }
 

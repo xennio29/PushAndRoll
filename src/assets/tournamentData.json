@@ -1,5 +1,5 @@
 {
-	"tournamentName": "Push And Roll Tournament",
+	"tournamentName": "Push N' Roll Tournament",
 
 	"players": [
 		{
@@ -7,36 +7,28 @@
 			"firstName": "Laetitia",
 			"lastName": "Praynet",
 			"pseudo": "Luckymarmotte",
-			"agence": 0,
-			"challenges": {
-			}
+			"agence": 0
 		},
 		{
 			"id": 2,
 			"firstName": "Jouet",
 			"lastName": "Jérémy",
 			"pseudo": "Xeyway",
-			"agence": 588,
-			"challenges": {
-			}
+			"agence": 588
 		},
 		{
 			"id": 3,
 			"firstName": "Feth-Allah",
 			"lastName": "Bentoumi",
 			"pseudo": "DKingyo",
-			"agence": 588,
-			"challenges": {
-			}
+			"agence": 588
 		},
 		{
 			"id": 4,
 			"firstName": "Pierre",
 			"lastName": "Stacke",
 			"pseudo": "Whilsker",
-			"agence": 588,
-			"challenges": {
-			}
+			"agence": 588
 		},
 
 		{
@@ -44,36 +36,28 @@
 			"firstName": "Quentin",
 			"lastName": "Veyssade",
 			"pseudo": "Ussoper",
-			"agence": 4040,
-			"challenges": {
-			}
+			"agence": 4040
 		},
 		{
 			"id": 6,
 			"firstName": "Quentin",
 			"lastName": "Pottier",
 			"pseudo": "Iluvatarr",
-			"agence": 588,
-			"challenges": {
-			}
+			"agence": 588
 		},
 		{
 			"id": 7,
 			"firstName": "Florian",
 			"lastName": "Schall",
 			"pseudo": "Zylboxx",
-			"agence": 1024,
-			"challenges": {
-			}
+			"agence": 1024
 		},
 		{
 			"id": 8,
 			"firstName": "Alexandre",
 			"lastName": "Groussier",
 			"pseudo": "iOvz",
-			"agence": 588,
-			"challenges": {
-			}
+			"agence": 588
 		},
 
 		{
@@ -88,18 +72,21 @@
 			"firstName": "Thibault",
 			"lastName": "Janssen",
 			"pseudo": "SupraSky",
-			"agence": 588,
-			"challenges": {
-			}
+			"agence": 588
 		},
 		{
 			"id": 11,
 			"firstName": "Sebastien",
 			"lastName": "Poussard",
 			"pseudo": "Andreaoun",
-			"agence": 588,
-			"challenges": {
-			}
+			"agence": 588
+		},
+		{
+			"id": 12,
+			"firstName": "Jonathan",
+			"lastName": "Vidal",
+			"pseudo": "Poupinou",
+			"agence": 0
 		}
 
 	],
