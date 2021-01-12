@@ -117,20 +117,32 @@
 		{
 			"pod1" : "Brawler",
 			"pod2" : "Hunter"
+		},
+		{
+			"pod1" : "Brawler",
+			"pod2" : "Elderwood"
+		},
+		{
+			"pod1" : "Hunter",
+			"pod2" : "Elderwood"
 		}
 	],
 
 	"matchsRonde2" : [
 		{
 			"pod1" : "Brawler",
+			"pod2" : "Hunter"
+		},
+		{
+			"pod1" : "Brawler",
+			"pod2" : "Elderwood"
+		},
+		{
+			"pod1" : "Hunter",
 			"pod2" : "Elderwood"
 		}
 	],
 
 	"matchsRonde3" : [
-		{
-			"pod1" : "Hunter",
-			"pod2" : "Elderwood"
-		}
 	]
 }
