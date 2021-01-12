@@ -42,11 +42,11 @@ export class Player {
 // TODO : fill with more data
 export enum Agence {
     Aeroline1026 = '1026 - Aeroline',
-    Agence588 = '588',
-    agence1024 = '1024',
-    agence1030 = '1030',
-    agence1205 = '1205',
-    agence4040 = '4040',
+    Agence588 = '0588 - Cyber Régions + Airbus Conseil & Intégration',
+    agence1024 = '1024 - Aero Digital Manufacturing Services Toul',
+    agence1030 = '1030 - Aeroline Operations & Industry 4.0 Tlse',
+    agence1205 = '1205 - TME Toulouse',
+    agence4040 = '4040 - Cards & Payment Solutions',
     agenceOther ='mysterous agence'
 }
 
