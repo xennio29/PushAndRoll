@@ -116,7 +116,15 @@
 	"matchsRonde1" : [
 		{
 			"pod1" : "Brawler",
-			"pod2" : "Hunter"
+			"pod2" : "Hunter",
+			"place1" : "Iluvatarr",
+			"place2" : "iOvz",
+			"place3" : "Andreaoun",
+			"place4" : "DKingyo",
+			"place5" : "Ussoper",
+			"place6" : "Xeyway",
+			"place7" : "Luckymarmotte",
+			"place8" : "Whilsker"
 		},
 		{
 			"pod1" : "Brawler",
