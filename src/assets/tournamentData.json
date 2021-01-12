@@ -14,7 +14,10 @@
 			"firstName": "Jérémy",
 			"lastName": "Jouet",
 			"pseudo": "Xeyway",
-			"agence": 588
+			"agence": 588,
+			"challenges": {
+				"missCalculation" : true,
+			}
 		},
 		{
 			"id": 3,
