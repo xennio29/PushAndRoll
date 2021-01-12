@@ -39,7 +39,6 @@ export class Player {
 
 }
 
-// TODO : fill with more data
 export enum Agence {
     Aeroline1026 = '1026 - Aeroline',
     Agence588 = '0588 - Cyber Régions + Airbus Conseil & Intégration',
@@ -50,7 +49,6 @@ export enum Agence {
     agenceOther ='mysterous agence'
 }
 
-// TODO fill with real challenge
 export class Challenges {
 
     // Mourir avec 50po
