@@ -16,6 +16,8 @@ export class MatchComponent implements OnInit {
   @Input() match: Match;
 
   matchName: string;
+  
+  matchDate: string
 
   constructor() { }
 
@@ -26,6 +28,8 @@ export class MatchComponent implements OnInit {
 
     this.matchName = originAndClassName1.francais + ' and ' + originAndClassName2.francais
                 + ' // ' + originAndClassName1.english + ' et ' + originAndClassName2.english;
+
+    this.matchDate = this.match.date;
 
     this.generateDataSource();
   }
