@@ -133,7 +133,15 @@
 		{
 			"pod1" : "Brawler",
 			"pod2" : "Elderwood",
-			"date" : "Mercredi 13 janvier : 19H45"
+			"date" : "Mercredi 13 janvier : 19H45",
+			"place1" : "SupraSky",
+			"place2" : "Zylboxx",
+			"place3" : "Maître Cornichon",
+			"place4" : "Xeyway",
+			"place5" : "Whilsker",
+			"place6" : "DKingyo",
+			"place7" : "Aelgaid",
+			"place8" : "Luckymarmotte"
 		},
 		{
 			"pod1" : "Hunter",
