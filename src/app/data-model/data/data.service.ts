@@ -233,6 +233,7 @@ export class DataService {
     return new Match(
       this.getPodFromOriginOrClass(match.pod1),
       this.getPodFromOriginOrClass(match.pod2),
+      match.date,
       match.place1,
       match.place2,
       match.place3,

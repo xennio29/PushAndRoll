@@ -3,6 +3,7 @@ import { Pod } from './pod';
 export class Match {
     public pod1: Pod;
     public pod2: Pod;
+    public date: string;
 
     public place1: string;
     public place2: string;
@@ -16,6 +17,7 @@ export class Match {
     constructor(
         pod1: Pod,
         pod2: Pod,
+        date: string,
         place1?: string,
         place2?: string,
         place3?: string,
@@ -27,6 +29,8 @@ export class Match {
     ) {
         this.pod1 = pod1;
         this.pod2 = pod2;
+
+        this.date = date;
 
         this.place8 = place8;
         this.place7 = place7;

@@ -14,7 +14,10 @@
 			"firstName": "Jérémy",
 			"lastName": "Jouet",
 			"pseudo": "Xeyway",
-			"agence": 588
+			"agence": 588,
+			"challenges": {
+				"missCalculation" : true
+			}
 		},
 		{
 			"id": 3,
@@ -116,15 +119,26 @@
 	"matchsRonde1" : [
 		{
 			"pod1" : "Brawler",
-			"pod2" : "Hunter"
+			"pod2" : "Hunter",
+			"date" : "Mardi 12 janvier : 20H15",
+			"place1" : "Iluvatarr",
+			"place2" : "iOvz",
+			"place3" : "Andreaoun",
+			"place4" : "DKingyo",
+			"place5" : "Ussoper",
+			"place6" : "Xeyway",
+			"place7" : "Luckymarmotte",
+			"place8" : "Whilsker"
 		},
 		{
 			"pod1" : "Brawler",
-			"pod2" : "Elderwood"
+			"pod2" : "Elderwood",
+			"date" : "Mercredi 13 janvier : 19H45"
 		},
 		{
 			"pod1" : "Hunter",
-			"pod2" : "Elderwood"
+			"pod2" : "Elderwood",
+			"date" : "Mercredi 13 janvier : 20H45"
 		}
 	],
 
