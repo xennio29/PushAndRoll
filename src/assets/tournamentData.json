@@ -38,21 +38,30 @@
 			"firstName": "Quentin",
 			"lastName": "Veyssade",
 			"pseudo": "Ussoper",
-			"agence": 4040
+			"agence": 4040,
+			"challenges": {
+				"missCalculation" : true
+			}
 		},
 		{
 			"id": 6,
 			"firstName": "Quentin",
 			"lastName": "Pottier",
 			"pseudo": "Iluvatarr",
-			"agence": 588
+			"agence": 588,
+			"challenges": {
+				"familyFirst" : true
+			}
 		},
 		{
 			"id": 7,
 			"firstName": "Florian",
 			"lastName": "Schall",
 			"pseudo": "Zylboxx",
-			"agence": 1024
+			"agence": 1024,
+			"challenges": {
+				"missCalculation" : true
+			}
 		},
 		{
 			"id": 8,
@@ -73,14 +82,20 @@
 			"firstName": "Thibault",
 			"lastName": "Janssen",
 			"pseudo": "SupraSky",
-			"agence": 588
+			"agence": 588,
+			"challenges": {
+				"missCalculation" : true
+			}
 		},
 		{
 			"id": 11,
 			"firstName": "Sebastien",
 			"lastName": "Poussard",
 			"pseudo": "Andreaoun",
-			"agence": 588
+			"agence": 588,
+			"challenges": {
+				"missCalculation" : true
+			}
 		},
 		{
 			"id": 12,
@@ -161,15 +176,18 @@
 	"matchsRonde2" : [
 		{
 			"pod1" : "Brawler",
-			"pod2" : "Hunter"
+			"pod2" : "Hunter",
+			"date" : "Vendredi 15 janvier : 19H30",
 		},
 		{
 			"pod1" : "Brawler",
-			"pod2" : "Elderwood"
+			"pod2" : "Elderwood",
+			"date" : "Vendredi 15 janvier : 20H30",
 		},
 		{
 			"pod1" : "Hunter",
-			"pod2" : "Elderwood"
+			"pod2" : "Elderwood",
+			"date" : "Vendredi 15 janvier : 21H30",
 		}
 	],
 
