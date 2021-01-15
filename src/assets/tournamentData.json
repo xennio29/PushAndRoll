@@ -96,7 +96,8 @@
 			"pseudo": "Andreaoun",
 			"agence": 1,
 			"challenges": {
-				"missCalculation" : true
+				"missCalculation" : true,
+				"familyFirst" : true
 			}
 		},
 		{
@@ -205,7 +206,15 @@
 		{
 			"pod1" : "Hunter",
 			"pod2" : "Elderwood",
-			"date" : "Vendredi 15 janvier : 21H30"
+			"date" : "Vendredi 15 janvier : 21H30",
+			"place1" : "Iluvatarr",
+			"place2" : "iOvz",
+			"place3" : "Ussoper",
+			"place4" : "Zylboxx",
+			"place5" : "Andreaoun",
+			"place6" : "Aelgaid",
+			"place7" : "SupraSky",
+			"place8" : "Maître Cornichon"
 		}
 	],
 
