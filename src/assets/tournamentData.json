@@ -16,7 +16,8 @@
 			"pseudo": "Xeyway",
 			"agence": 1,
 			"challenges": {
-				"missCalculation" : true
+				"missCalculation" : true,
+				"familyFirst" : true
 			}
 		},
 		{
@@ -177,7 +178,15 @@
 		{
 			"pod1" : "Brawler",
 			"pod2" : "Hunter",
-			"date" : "Vendredi 15 janvier : 19H30"
+			"date" : "Vendredi 15 janvier : 19H30",
+			"place1" : "Xeyway",
+			"place2" : "Andreaoun",
+			"place3" : "iOvz",
+			"place4" : "Iluvatarr",
+			"place5" : "Whilsker",
+			"place6" : "DKingyo",
+			"place7" : "Ussoper",
+			"place8" : "Luckymarmotte"
 		},
 		{
 			"pod1" : "Brawler",
