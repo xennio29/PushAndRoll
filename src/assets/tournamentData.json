@@ -14,7 +14,7 @@
 			"firstName": "Jérémy",
 			"lastName": "Jouet",
 			"pseudo": "Xeyway",
-			"agence": 588,
+			"agence": 1,
 			"challenges": {
 				"missCalculation" : true
 			}
@@ -24,21 +24,21 @@
 			"firstName": "Feth-Allah",
 			"lastName": "Bentoumi",
 			"pseudo": "DKingyo",
-			"agence": 588
+			"agence": 1
 		},
 		{
 			"id": 4,
 			"firstName": "Pierre",
 			"lastName": "Stacke",
 			"pseudo": "Whilsker",
-			"agence": 588
+			"agence": 1
 		},
 		{
 			"id": 5,
 			"firstName": "Quentin",
 			"lastName": "Veyssade",
 			"pseudo": "Ussoper",
-			"agence": 4040,
+			"agence": 1,
 			"challenges": {
 				"missCalculation" : true
 			}
@@ -48,7 +48,7 @@
 			"firstName": "Quentin",
 			"lastName": "Pottier",
 			"pseudo": "Iluvatarr",
-			"agence": 588,
+			"agence": 1,
 			"challenges": {
 				"familyFirst" : true
 			}
@@ -58,7 +58,7 @@
 			"firstName": "Florian",
 			"lastName": "Schall",
 			"pseudo": "Zylboxx",
-			"agence": 1024,
+			"agence": 1,
 			"challenges": {
 				"missCalculation" : true
 			}
@@ -68,21 +68,21 @@
 			"firstName": "Alexandre",
 			"lastName": "Groussier",
 			"pseudo": "iOvz",
-			"agence": 588
+			"agence": 1
 		},
 		{
 			"id": 9,
 			"firstName": "Valentin",
 			"lastName": "Dales",
 			"pseudo": "Aelgaid",
-			"agence": 1026
+			"agence": 1
 		},
 		{
 			"id": 10,
 			"firstName": "Thibault",
 			"lastName": "Janssen",
 			"pseudo": "SupraSky",
-			"agence": 588,
+			"agence": 1,
 			"challenges": {
 				"missCalculation" : true
 			}
@@ -92,7 +92,7 @@
 			"firstName": "Sebastien",
 			"lastName": "Poussard",
 			"pseudo": "Andreaoun",
-			"agence": 588,
+			"agence": 1,
 			"challenges": {
 				"missCalculation" : true
 			}
@@ -102,7 +102,7 @@
 			"firstName": "Lucas",
 			"lastName": "Clement",
 			"pseudo": "Maître Cornichon",
-			"agence": 588
+			"agence": 1
 		}
 
 	],
