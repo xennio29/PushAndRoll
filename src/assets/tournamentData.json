@@ -62,7 +62,8 @@
 			"pseudo": "Zylboxx",
 			"agence": 1,
 			"challenges": {
-				"missCalculation" : true
+				"missCalculation" : true,
+				"familyFirst" : true
 			}
 		},
 		{
