@@ -1,3 +1,5 @@
+import { Injectable } from "@angular/core";
+
 export class OriginOrClass {
 
     private englishName: string;
@@ -5,7 +7,9 @@ export class OriginOrClass {
     private logoPath: string;
 
     constructor(englishName, frenchName, logoPath) {
-
+        this.englishName = englishName;
+        this.frenchName = frenchName;
+        this.logoPath = logoPath;
     }
 
     getEnglishName(): string {
@@ -21,6 +25,9 @@ export class OriginOrClass {
     }
 }
 
+@Injectable({
+    providedIn: 'root'
+  })
 export class OriginOrClassList {
 
     private list: Map<EOriginOrClass, OriginOrClass> = new Map();
@@ -49,14 +56,20 @@ export class OriginOrClassList {
     }
 
     public getByName(originOrClassName: string): OriginOrClass {
-        this.list.forEach(function(originOrClass) {
+
+        let currentOriginOrClass: OriginOrClass = null;
+        this.list.forEach(originOrClass => {
             if (originOrClass.getEnglishName() === originOrClassName
                 || originOrClass.getFrenchName() === originOrClassName) {
-                    return originOrClass;
-                }
+                    return currentOriginOrClass = originOrClass;
+            }
         })
-        console.error('no origin or class found with name ' + originOrClassName);
-        return null;
+        if (currentOriginOrClass !== undefined && currentOriginOrClass != null) {
+            return currentOriginOrClass
+        } else {
+            console.error('no origin or class found with name ' + originOrClassName);
+            return null;
+        }
     }
 }
 

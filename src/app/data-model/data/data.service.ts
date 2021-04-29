@@ -36,7 +36,6 @@ export class DataService {
     this.ronde1Emitter = new EventEmitter();
     this.ronde2Emitter = new EventEmitter();
     this.ronde3Emitter = new EventEmitter();
-
   }
 
 
@@ -191,7 +190,9 @@ export class DataService {
       
     });
 
-    console.error('[DATA ERROR FOR PLAYER]: No pod for this player', players);
+    if (players.length !== 0) {
+      console.error('[DATA ERROR FOR PLAYER]: No pod for this player', players);
+    }
 
   }
   
@@ -209,9 +210,11 @@ export class DataService {
   }
 
   private toMatchDomain(match): Match {
+    const pod1 = this.getPodFromOriginOrClass(match.pod1);
+    const pod2 = this.getPodFromOriginOrClass(match.pod2);
     return new Match(
-      this.getPodFromOriginOrClass(match.pod1),
-      this.getPodFromOriginOrClass(match.pod2),
+      pod1,
+      pod2,
       match.date,
       match.place1,
       match.place2,
@@ -225,7 +228,13 @@ export class DataService {
   }
 
   private getPodFromOriginOrClass(originOrClassName): Pod {
-    return this._pods.find(pod => pod.originOrClass === this.originOrClassList.getByName(originOrClassName));
+    console.log(this._pods)
+    const currentPod = this._pods.find(pod => pod.originOrClass === this.originOrClassList.getByName(originOrClassName));
+    console.log(currentPod);
+    if (currentPod === null || currentPod === undefined) {
+      console.error('No pod named ' + originOrClassName + 'found.');
+    }
+    return currentPod;
   }
 
 

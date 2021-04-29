@@ -13,11 +13,12 @@ export class Player {
         this.firstName = firstName;
         this.lastName = lastName;
         this.pseudo = pseudo;
-        challenges.forEach(challenge => {
-            this.challenges.push(this.matchEnum(challenge));
-        });
+        if (challenges !== undefined) {
+            challenges.forEach(challenge => {
+                this.challenges.push(this.matchEnum(challenge));
+            });
+        }
     }
-
     missConstruct(id: number, firstName: string, lastName: string, pseudo: string) {
 
         const issue: string[] = []

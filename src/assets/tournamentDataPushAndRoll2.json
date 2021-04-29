@@ -152,7 +152,7 @@
 
 	"pods" : [
 		{
-			"OriginOrClass" : "Assasin",
+			"OriginOrClass" : "Assassin",
 			"player1" : 1,
 			"player2" : 2,
 			"player3" : 3,
@@ -199,84 +199,21 @@
 		{
 			"pod1" : "Brawler",
 			"pod2" : "Hunter",
-			"date" : "Mardi 12 janvier : 20H15",
-			"place1" : "Iluvatarr",
-			"place2" : "iOvz",
-			"place3" : "Andreaoun",
-			"place4" : "DKingyo",
-			"place5" : "Ussoper",
-			"place6" : "Xeyway",
-			"place7" : "Luckymarmotte",
-			"place8" : "Whilsker"
+			"date" : "Mardi 12 janvier : 20H15"
 		},
 		{
 			"pod1" : "Brawler",
 			"pod2" : "Elderwood",
-			"date" : "Mercredi 13 janvier : 19H45",
-			"place1" : "SupraSky",
-			"place2" : "Zylboxx",
-			"place3" : "Maître Cornichon",
-			"place4" : "Xeyway",
-			"place5" : "Whilsker",
-			"place6" : "DKingyo",
-			"place7" : "Aelgaid",
-			"place8" : "Luckymarmotte"
+			"date" : "Mercredi 13 janvier : 19H45"
 		},
 		{
 			"pod1" : "Hunter",
 			"pod2" : "Elderwood",
-			"date" : "Mercredi 13 janvier : 20H45",
-			"place1" : "iOvz",
-			"place2" : "Iluvatarr",
-			"place3" : "Ussoper",
-			"place4" : "Aelgaid",
-			"place5" : "Andreaoun",
-			"place6" : "SupraSky",
-			"place7" : "Maître Cornichon",
-			"place8" : "Zylboxx"
+			"date" : "Mercredi 13 janvier : 20H45"
 		}
 	],
 
 	"matchsRonde2" : [
-		{
-			"pod1" : "Brawler",
-			"pod2" : "Hunter",
-			"date" : "Vendredi 15 janvier : 19H30",
-			"place1" : "Xeyway",
-			"place2" : "Andreaoun",
-			"place3" : "iOvz",
-			"place4" : "Iluvatarr",
-			"place5" : "Whilsker",
-			"place6" : "DKingyo",
-			"place7" : "Ussoper",
-			"place8" : "Luckymarmotte"
-		},
-		{
-			"pod1" : "Brawler",
-			"pod2" : "Elderwood",
-			"date" : "Vendredi 15 janvier : 20H30",
-			"place1" : "Zylboxx",
-			"place2" : "Xeyway",
-			"place3" : "Aelgaid",
-			"place4" : "DKingyo",
-			"place5" : "Whilsker",
-			"place6" : "SupraSky",
-			"place7" : "Luckymarmotte",
-			"place8" : "Maître Cornichon"
-		},
-		{
-			"pod1" : "Hunter",
-			"pod2" : "Elderwood",
-			"date" : "Vendredi 15 janvier : 21H30",
-			"place1" : "Iluvatarr",
-			"place2" : "iOvz",
-			"place3" : "Ussoper",
-			"place4" : "Zylboxx",
-			"place5" : "Andreaoun",
-			"place6" : "Aelgaid",
-			"place7" : "SupraSky",
-			"place8" : "Maître Cornichon"
-		}
 	],
 
 	"matchsRonde3" : [
