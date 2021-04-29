@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { DataService, DataType } from '../data-model/data/data.service';
 
 @Component({
   selector: 'pr-menu-bar',
@@ -13,10 +14,18 @@ export class MenuBarComponent implements OnInit {
 
   @Output() public sidenavToggle = new EventEmitter();
 
-  constructor(private route: ActivatedRoute,
+  tournamentName: string;
+
+  constructor(private dataService: DataService,
+              private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit(): void {
+
+    this.dataService.tournamentNameEmitter.subscribe(result => {
+      this.tournamentName = result;
+    })
+    this.dataService.askData(DataType.TournamentName);
 
     this.router.events.subscribe( event => {
       if (event instanceof NavigationEnd) {

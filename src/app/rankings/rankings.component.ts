@@ -109,12 +109,8 @@ class RankPlayer {
     this.pseudo = player.pseudo;
     this.score = 0;
     if (player.challenges) {
-      if (player.challenges.missCalculation) { this.addScore(1); }
-      if (player.challenges.FoN) { this.addScore(1); }
-      if (player.challenges.quatreALaSuite) { this.addScore(1); }
-      if (player.challenges.oneV9) { this.addScore(1); }
-      if (player.challenges.familyFirst) { this.addScore(1); }
-      if (player.challenges.turboHighrolleur) { this.addScore(1); }
+
+      // TODO add new challenge
     }
     
   }

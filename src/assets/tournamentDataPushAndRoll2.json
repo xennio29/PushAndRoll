@@ -1,0 +1,284 @@
+{
+	"tournamentName": "Push And Roll 2",
+
+	"players": [
+		{
+			"id": 1,
+			"firstName": "player",
+			"lastName": "one",
+			"pseudo": "1"
+		},
+		{
+			"id": 2,
+			"firstName": "player",
+			"lastName": "two",
+			"pseudo": "2"
+		},
+		{
+			"id": 3,
+			"firstName": "player",
+			"lastName": "three",
+			"pseudo": "3"
+		},
+		{
+			"id": 4,
+			"firstName": "player",
+			"lastName": "four",
+			"pseudo": "4"
+		},
+		{
+			"id": 5,
+			"firstName": "player",
+			"lastName": "five",
+			"pseudo": "5"
+		},
+		{
+			"id": 6,
+			"firstName": "player",
+			"lastName": "six",
+			"pseudo": "6"
+		},
+		{
+			"id": 7,
+			"firstName": "player",
+			"lastName": "sept",
+			"pseudo": "7",
+			"agence": 1
+		},
+		{
+			"id": 8,
+			"firstName": "player",
+			"lastName": "huit",
+			"pseudo": "8"
+		},
+		{
+			"id": 9,
+			"firstName": "player",
+			"lastName": "nine",
+			"pseudo": "9"
+		},
+		{
+			"id": 10,
+			"firstName": "player",
+			"lastName": "ten",
+			"pseudo": "10"
+		},
+		{
+			"id": 11,
+			"firstName": "player",
+			"lastName": "eleven",
+			"pseudo": "11"
+		},
+		{
+			"id": 12,
+			"firstName": "player",
+			"lastName": "twelve",
+			"pseudo": "12"
+		},
+		{
+			"id": 13,
+			"firstName": "player",
+			"lastName": "thirteen",
+			"pseudo": "13"
+		},
+		{
+			"id": 14,
+			"firstName": "player",
+			"lastName": "fourteen",
+			"pseudo": "14"
+		},
+		{
+			"id": 15,
+			"firstName": "player",
+			"lastName": "fifteen",
+			"pseudo": "15"
+		},
+		{
+			"id": 16,
+			"firstName": "player",
+			"lastName": "sixteen",
+			"pseudo": "16"
+		},
+		{
+			"id": 17,
+			"firstName": "player",
+			"lastName": "seventeen",
+			"pseudo": "17"
+		},
+		{
+			"id": 18,
+			"firstName": "player",
+			"lastName": "heighteen",
+			"pseudo": "18"
+		},
+		{
+			"id": 19,
+			"firstName": "player",
+			"lastName": "nineteen",
+			"pseudo": "19"
+		},
+		{
+			"id": 20,
+			"firstName": "player",
+			"lastName": "twenty",
+			"pseudo": "20"
+		},
+		{
+			"id": 21,
+			"firstName": "player",
+			"lastName": "twenty one",
+			"pseudo": "21"
+		},
+		{
+			"id": 22,
+			"firstName": "player",
+			"lastName": "twenty two",
+			"pseudo": "22"
+		},
+		{
+			"id": 23,
+			"firstName": "player",
+			"lastName": "twenty three",
+			"pseudo": "23"
+		},
+		{
+			"id": 24,
+			"firstName": "player",
+			"lastName": "twenty four",
+			"pseudo": "24"
+		}
+
+	],
+
+	"pods" : [
+		{
+			"OriginOrClass" : "Assasin",
+			"player1" : 1,
+			"player2" : 2,
+			"player3" : 3,
+			"player4" : 4
+		},
+		{
+			"OriginOrClass" : "Brawler",
+			"player1" : 5,
+			"player2" : 6,
+			"player3" : 7,
+			"player4" : 8
+		},
+		{
+			"OriginOrClass" : "Cavalier",
+			"player1" : 9,
+			"player2" : 10,
+			"player3" : 11,
+			"player4" : 12
+		},
+		{
+			"OriginOrClass" : "Draconic",
+			"player1" : 13,
+			"player2" : 14,
+			"player3" : 15,
+			"player4" : 16
+		},
+		{
+			"OriginOrClass" : "Ranger",
+			"player1" : 17,
+			"player2" : 18,
+			"player3" : 19,
+			"player4" : 20
+		},
+		{
+			"OriginOrClass" : "Forgotten",
+			"player1" : 21,
+			"player2" : 22,
+			"player3" : 23,
+			"player4" : 24
+		}
+	],
+
+	"matchsRonde1" : [
+		{
+			"pod1" : "Brawler",
+			"pod2" : "Hunter",
+			"date" : "Mardi 12 janvier : 20H15",
+			"place1" : "Iluvatarr",
+			"place2" : "iOvz",
+			"place3" : "Andreaoun",
+			"place4" : "DKingyo",
+			"place5" : "Ussoper",
+			"place6" : "Xeyway",
+			"place7" : "Luckymarmotte",
+			"place8" : "Whilsker"
+		},
+		{
+			"pod1" : "Brawler",
+			"pod2" : "Elderwood",
+			"date" : "Mercredi 13 janvier : 19H45",
+			"place1" : "SupraSky",
+			"place2" : "Zylboxx",
+			"place3" : "Maître Cornichon",
+			"place4" : "Xeyway",
+			"place5" : "Whilsker",
+			"place6" : "DKingyo",
+			"place7" : "Aelgaid",
+			"place8" : "Luckymarmotte"
+		},
+		{
+			"pod1" : "Hunter",
+			"pod2" : "Elderwood",
+			"date" : "Mercredi 13 janvier : 20H45",
+			"place1" : "iOvz",
+			"place2" : "Iluvatarr",
+			"place3" : "Ussoper",
+			"place4" : "Aelgaid",
+			"place5" : "Andreaoun",
+			"place6" : "SupraSky",
+			"place7" : "Maître Cornichon",
+			"place8" : "Zylboxx"
+		}
+	],
+
+	"matchsRonde2" : [
+		{
+			"pod1" : "Brawler",
+			"pod2" : "Hunter",
+			"date" : "Vendredi 15 janvier : 19H30",
+			"place1" : "Xeyway",
+			"place2" : "Andreaoun",
+			"place3" : "iOvz",
+			"place4" : "Iluvatarr",
+			"place5" : "Whilsker",
+			"place6" : "DKingyo",
+			"place7" : "Ussoper",
+			"place8" : "Luckymarmotte"
+		},
+		{
+			"pod1" : "Brawler",
+			"pod2" : "Elderwood",
+			"date" : "Vendredi 15 janvier : 20H30",
+			"place1" : "Zylboxx",
+			"place2" : "Xeyway",
+			"place3" : "Aelgaid",
+			"place4" : "DKingyo",
+			"place5" : "Whilsker",
+			"place6" : "SupraSky",
+			"place7" : "Luckymarmotte",
+			"place8" : "Maître Cornichon"
+		},
+		{
+			"pod1" : "Hunter",
+			"pod2" : "Elderwood",
+			"date" : "Vendredi 15 janvier : 21H30",
+			"place1" : "Iluvatarr",
+			"place2" : "iOvz",
+			"place3" : "Ussoper",
+			"place4" : "Zylboxx",
+			"place5" : "Andreaoun",
+			"place6" : "Aelgaid",
+			"place7" : "SupraSky",
+			"place8" : "Maître Cornichon"
+		}
+	],
+
+	"matchsRonde3" : [
+	]
+}
