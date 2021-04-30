@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class RulesComponent implements OnInit {
 
   constructor() {
-    // TODO : Add rules
   }
 
   ngOnInit(): void {

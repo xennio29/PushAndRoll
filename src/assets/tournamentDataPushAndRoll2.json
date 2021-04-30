@@ -1,6 +1,97 @@
 {
 	"tournamentName": "Push And Roll 2",
 
+	"rules": {
+		"title": "RÈGLEMENT TOURNOI TFT PUSH AND ROLL BY BELUGAS TOULOUSE",
+		"chapters": [
+			{
+				"title": "Présentation",
+				"content": [
+					"Le tournoi Push and Roll est une initiative des Belugas Toulouse : la communauté E-sport de Sopra Steria dans le bassin Toulousain. Le but est de faire un tournoi à la fois convivial et compétitif sur le jeu Team Fight Tactics.",
+				]
+			},
+			{
+				"title": "Informations sur l'événement",
+				"content": [
+					"- Date : Le tournoi se déroulera les soirs des mercredi 2 juin et jeudi 3 juin. La première soirée commencera par un point informel afin de partager quelque instruction et de répondre à vos questions ensuite se dérouleront les trois matchs du premier jours. La deuxième soirée fera s'affronter les 8 meillieurs joueurs de la première soirée.",
+					"- Heures : Le matchs se joueront le soir, il y aura 3 matchs par soir alors prenez le soin de réserver votre soirée. Les heures des matchs sont vers 19h30, 20h3O, 21h30.",
+					"- Price pool : pour cette événement il y aura plus de 50 € de prize pool répartie entre les quatre premiers joueurs !",
+					"- Prix d'inscription : Le tournoi est gratuit pour tous.",
+					"- Structure : Les joueurs sont réparties en pod de quatre joueurs. A chaque match, deux pods de quatre sont regroupés pour créé le match de TFT à 8 joueurs. Ainsi pour chaque match vous jouerez toujours avec les même trois joueurs et les 4 autres joueurs changeront à chaque fois."
+				]
+			},
+			{
+				"title": "Participer",
+				"content": [
+					"Pour participer au tournoi il suffit de s'inscrire via <a href=\"https://forms.gle/qSXcQAbdSUmYXJ9h7\" target=\"_blank\">ce Google form</a> si ce n'est pas déjà fait et d'accepter ce règlement sur le discord. Les joueurs doivent posséder leur propre compte RIOT sur serveur EU et travailler à Sopra Steria (les prestataires et stagiaires ont par exemple le droit de participer au tournoi).",
+					"Dans le Google Form vous avez la possibilité de nommer un 'ami' avec lequel vous voulez jouer pour ce tournoi. Si vous faites ce choix vous serez tous les deux dans le même pod.",
+					"En participant, vous vous engagez à avoir une conduite Fair-play et respectueuse de vos adversaires. De plus vous êtes responsable de votre connexion internet et devez être ponctuel à vos parties. S'il y a des problèmes de connexions, il n'y aura pas de remake.",
+					"Afin de communiquer plus simplement avec vous, changez votre pseudo sur ce serveur pour qu'il soit le même que celui du client Riot. tuto <a href=\"https://support.discord.com/hc/fr/articles/219070107-Surnoms-de-serveurs#:~:text=Vous%20pouvez%20changer%20votre%20surnom,s%C3%A9lectionnez%20%C2%AB%20Changer%20le%20surnom%20%C2%BB\" target=\"_blank\">ici</a>"
+				]
+			},
+			{
+				"title": "Déroulement avant le match",
+				"content": [
+					"Le premier de chaque poule sera le responsable de match. Sa responsabilité sera de créer le lobby et d'inviter les sept autre joueurs.",
+					"Chaque match se déroulera à une heure précise il est demandé de se connecter au Client 10 min avant le début de son match et de rejoindre le salon vocal discord qui a été désigné pour le match. Nous comptons sur tout le monde pour assurer le bon déroulement du tournoi et d'être assez vigilant sur le lancement de leur match.",
+					"Si un joueur est absent ou ne répond pas, le groupe attendra jusqu'à 10 min après l'heure de début du match puis commencera le match avec les joueurs présents dans un lobby à 7 plus un joueurs venant du matchmaking. La position final de ce joueur ne sera pas considéré dans le classement de ce match. Si un joueur arrive après ce délai il ne peut plus participer au match mais cela ne l'empêche pas de participer aux matchs suivants.",
+					"L'onglet planning ainsi que le channel discord #🥁tournament-annoncement🥁 vous informera du début des matchs."
+				]
+			},
+			{
+				"title": "Déroulement pendant le match",
+				"content": [
+					"Il est interdit de jouer à plusieurs ou de demander de l'aide pendant la partie.",
+					"Exception : Lors des inscriptions si vous avez choisi de jouer avec un 'ami'. Vous pouvez être en vocal avec celui-ci. Des salons de deux personnes seront créé à la volée avant le début des matchs sur demande.",
+					"L'usage émotte ou d'animation de la petite légende sont autorisés.",
+					"Pour tout problème durant la partie contacter un Admin via le Channel discord #🙋admin-request🙋"
+				]
+			},
+			{
+				"title": "Déroulement après le match",
+				"content": [
+					"Une fois le match fini le gagnant doit prendre un screen du classement final des joueurs et de la poster dans le channel 'match-result' avec l'annotation '@Orga TFT' et le nom des pods.",
+					"Les joueurs peuvent demander une pause de quelque minute entre deux matchs ou commencer dès que tous les joueurs du prochain match sont prêts."
+				]
+			},
+			{
+				"title": "Score",
+				"content": [
+					"Selon sa position en fin de partie, chaque joueur reçoit des points selon la liste suivant :",
+					"1er : 10 points",
+					"2ème : 8 points",
+					"3ème : 7 points",
+					"4ème : 6 points",
+					"5ème : 4 points",
+					"6ème : 3 points",
+					"7ème : 2 points",
+					"8ème : 1 point",
+					"Le score cumulé des points de chaque joueur détermine le classement général, en cas d'égalité le nombre de top 1 sera utilisé. Ainsi sur trois parties, si je je fais 1er, 4ème et 5ème. Mon score totale est de 10 + 6 + 4 = 20 points.",
+					"En plus de ces points, vous gagnez un point pour chaque defi réussi au moins une fois !",
+					"Les défis sont :"
+					"todo",
+					"todo",
+					"Pour validé un défis prenez un screenshot et postez le dans #🥇match-result🥇"
+				]
+			},
+			{
+				"title": "Réclamation",
+				"content": [
+					"Pour toute réclamation avant, pendant ou après un match utiliser le channel 'admin-request'. Nous les traiterons dans les plus bref délai.",
+					"Les admins pourrons si cela est nécessaire attribuer des sanctions aux joueurs commettant des actes contraire aux règles du tournoi. Cela peut aller de la perte de points à la disqualification."
+				]
+			},
+			{
+				"title": "Le mot de la fin",
+				"content": [
+					"Si vous avez des questions n'hésitez pas à les poser dans le channel #🙋admin-request🙋.",
+					"N'oubliez pas de vous amusé, pensez à changer de pseudo, bon jeu à tous et que le meilleur high-roller gagne !"
+				]
+			}
+		]
+			
+	},
+
 	"players": [
 		{
 			"id": 1,

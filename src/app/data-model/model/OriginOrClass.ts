@@ -33,8 +33,6 @@ export class OriginOrClassList {
     private list: Map<EOriginOrClass, OriginOrClass> = new Map();
 
     constructor() {
-        console.log('Generate map for Origin or Class');
-
         this.list.set(EOriginOrClass.ASSASSIN,
             new OriginOrClass('Assassin', 'Assassin', 'assets/img/OriginOrClass/Assassin_TFT_icon.png'));
         this.list.set(EOriginOrClass.BRAWLER,
