@@ -1,13 +1,12 @@
 {
 	"tournamentName": "Push And Roll 2",
-
 	"rules": {
 		"title": "RÈGLEMENT TOURNOI TFT PUSH AND ROLL BY BELUGAS TOULOUSE",
 		"chapters": [
 			{
 				"title": "Présentation",
 				"content": [
-					"Le tournoi Push and Roll est une initiative des Belugas Toulouse : la communauté E-sport de Sopra Steria dans le bassin Toulousain. Le but est de faire un tournoi à la fois convivial et compétitif sur le jeu Team Fight Tactics.",
+					"Le tournoi Push and Roll est une initiative des Belugas Toulouse : la communauté E-sport de Sopra Steria dans le bassin Toulousain. Le but est de faire un tournoi à la fois convivial et compétitif sur le jeu Team Fight Tactics."
 				]
 			},
 			{
@@ -68,7 +67,7 @@
 					"8ème : 1 point",
 					"Le score cumulé des points de chaque joueur détermine le classement général, en cas d'égalité le nombre de top 1 sera utilisé. Ainsi sur trois parties, si je je fais 1er, 4ème et 5ème. Mon score totale est de 10 + 6 + 4 = 20 points.",
 					"En plus de ces points, vous gagnez un point pour chaque defi réussi au moins une fois !",
-					"Les défis sont :"
+					"Les défis sont :",
 					"todo",
 					"todo",
 					"Pour validé un défis prenez un screenshot et postez le dans #🥇match-result🥇"
