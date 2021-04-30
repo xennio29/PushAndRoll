@@ -26,7 +26,7 @@ export class DataService {
   public ronde2Emitter: EventEmitter<Match[]>;
   public ronde3Emitter: EventEmitter<Match[]>;
 
-  private loaded = false;
+  private loading = false;
 
   constructor(private http: HttpClient, private originOrClassList :OriginOrClassList) { 
 
@@ -46,22 +46,22 @@ export class DataService {
       this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/tournamentDataPushAndRoll2.json').subscribe(data => {
   
         this._tournamentName = data.tournamentName;
-        console.log('Welcome to ' + this._tournamentName);
+        console.log('[System] Welcome to ' + this._tournamentName);
   
         this._players = this.constructPlayers(data.players);
-        console.log(this._players.length + ' players imported.');
+        console.log('[System] ' + this._players.length + ' players imported.');
   
         this._pods = this.constructPods(data.pods);
-        console.log(this._pods.length + ' pods imported.');
+        console.log('[System] ' + this._pods.length + ' pods imported.');
   
         this._matchsRonde1 = this.constructMatchs(data.matchsRonde1);
-        console.log(this._matchsRonde1.length + ' matchs imported for ronde 1');
+        console.log('[System] ' + this._matchsRonde1.length + ' matchs imported for ronde 1');
   
         this._matchsRonde2 = this.constructMatchs(data.matchsRonde2);
-        console.log(this._matchsRonde2.length + ' matchs imported for ronde 2');
+        console.log('[System] ' + this._matchsRonde2.length + ' matchs imported for ronde 2');
   
         this._matchsRonde3 = this.constructMatchs(data.matchsRonde3);
-        console.log(this._matchsRonde3.length + ' matchs imported for ronde 3');
+        console.log('[System] ' + this._matchsRonde3.length + ' matchs imported for ronde 3');
 
         observer.complete();
       });
@@ -75,17 +75,16 @@ export class DataService {
 
   askData(...datasType: DataType[]) {
 
-    if(!this.loaded) {
+    if(!this.loading) {
+      this.loading = true;
       this.loadData().subscribe({
-        complete: () => {
-          this.loaded = true;
+        complete: () => {        
           this.emitData(...datasType);
         }
       });
     } else {
       this.emitData(...datasType);
     }
-
   }
 
   private emitData(...datasType: DataType[]) {
@@ -228,9 +227,8 @@ export class DataService {
   }
 
   private getPodFromOriginOrClass(originOrClassName): Pod {
-    console.log(this._pods)
-    const currentPod = this._pods.find(pod => pod.originOrClass === this.originOrClassList.getByName(originOrClassName));
-    console.log(currentPod);
+    const currentOriginOrClass = this.originOrClassList.getByName(originOrClassName);
+    const currentPod = this._pods.find(pod => pod.originOrClass === currentOriginOrClass);
     if (currentPod === null || currentPod === undefined) {
       console.error('No pod named ' + originOrClassName + 'found.');
     }
