@@ -197,18 +197,18 @@
 
 	"matchsRonde1" : [
 		{
-			"pod1" : "Brawler",
-			"pod2" : "Hunter",
+			"pod1" : "Assassin",
+			"pod2" : "Brawler",
 			"date" : "Mardi 12 janvier : 20H15"
 		},
 		{
-			"pod1" : "Brawler",
-			"pod2" : "Elderwood",
+			"pod1" : "Cavalier",
+			"pod2" : "Draconic",
 			"date" : "Mercredi 13 janvier : 19H45"
 		},
 		{
-			"pod1" : "Hunter",
-			"pod2" : "Elderwood",
+			"pod1" : "Ranger",
+			"pod2" : "Forgotten",
 			"date" : "Mercredi 13 janvier : 20H45"
 		}
 	],
