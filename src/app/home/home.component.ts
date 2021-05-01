@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService, DataType } from '../data-model/data/data.service';
+import { DataService } from '../data-model/data/data.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   belugasLogo = 'assets/img/redblack_logo.png';
 
@@ -14,13 +14,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private dataService: DataService) {
 
-    this.dataService.tournamentNameEmitter.subscribe(result => {
+    this.dataService.getTournamentName().subscribe(result => {
       this.tournamentName = result;
     })
-    this.dataService.askData(DataType.TournamentName);
    }
-
-  ngOnInit(): void {
-  }
-
 }

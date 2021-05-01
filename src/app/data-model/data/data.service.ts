@@ -1,5 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Match } from '../model/match';
 import { Player } from '../model/player';
 import { Pod } from '../model/pod';
@@ -11,58 +12,58 @@ import { DataBaseProvider } from './DataBaseProvider';
 })
 export class DataService {
 
-  /**
-   * All emitter need for each data
-   */
-  public tournamentNameEmitter: EventEmitter<string>;
-  public tournamentRulesEmitter: EventEmitter<any>;
-  public playerEmitter: EventEmitter<Player[]>;
-  public podEmitter: EventEmitter<Pod[]>;
-  public ronde1Emitter: EventEmitter<Match[]>;
-  public ronde2Emitter: EventEmitter<Match[]>;
-  public ronde3Emitter: EventEmitter<Match[]>;
+  /* The database once it's import. */
+  private database: DataBase = null;
 
   constructor(private dataBaseProvider: DataBaseProvider) { 
-    this.tournamentNameEmitter = new EventEmitter();
-    this.playerEmitter = new EventEmitter();
-    this.podEmitter = new EventEmitter();
-    this.ronde1Emitter = new EventEmitter();
-    this.ronde2Emitter = new EventEmitter();
-    this.ronde3Emitter = new EventEmitter();
+
+    dataBaseProvider.databaseEmitter.subscribe( result => {
+      this.database = result;
+    });
+
+    dataBaseProvider.loadDatabase();
   }
 
-  // ASKER
-  //////////////////////
+  databaseCall( method: string ) {
+    return new Observable<any> ( observer => {
 
-  askData(...datasType: DataType[]) {
-
-    this.dataBaseProvider.loadDatabase().subscribe((dataBase: DataBase) => {
-      this.emitData(dataBase, ...datasType);
+      if(this.database !== null) {
+        observer.next(this.database[method]());
+        observer.complete();
+      } else {
+        this.dataBaseProvider.databaseEmitter.subscribe(result => {
+            observer.next(result[method]());
+            observer.complete();
+        });
+      }
     });
   }
 
-  private emitData(dataBase: DataBase, ...datasType: DataType[]) {
-
-    datasType.forEach( dataType => {
-      switch (dataType) {
-        case DataType.TournamentName: this.tournamentNameEmitter.emit(dataBase.getTournamentName());
-        case DataType.Rules: this.tournamentRulesEmitter.emit(dataBase.getRules());
-        case DataType.Players: this.playerEmitter.emit(dataBase.getPlayers());
-        case DataType.Pods: this.podEmitter.emit(dataBase.getPods());
-        case DataType.Ronde1: this.ronde1Emitter.emit(dataBase.getRonde1());
-        case DataType.Ronde2: this.ronde2Emitter.emit(dataBase.getRonde2());
-        case DataType.Ronde3: this.ronde3Emitter.emit(dataBase.getRonde3());
-      }
-    })
+  getTournamentName(): Observable<string> {
+    return this.databaseCall('getTournamentName');
   }
-}
 
-export enum DataType {
-  TournamentName,
-  Rules,
-  Players,
-  Pods,
-  Ronde1,
-  Ronde2,
-  Ronde3
+  getRules(): Observable<any> {
+    return this.databaseCall('getRules');
+  }
+
+  getPlayers(): Observable<Player[]> {
+    return this.databaseCall('getPlayers');
+  }
+
+  getPods(): Observable<Pod[]> {
+    return this.databaseCall('getPods');
+  }
+
+  getRound1(): Observable<Match[]> {
+    return this.databaseCall('getRonde1');
+  }
+
+  getRound2(): Observable<Match[]> {
+    return this.databaseCall('getRonde2');
+  }
+
+  getRound3(): Observable<Match[]> {
+    return this.databaseCall('getRonde3');
+  }
 }

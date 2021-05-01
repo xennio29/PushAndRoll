@@ -23,9 +23,7 @@ export class DataBase {
     constructor(data: any, originOrClassList: OriginOrClassList) {
 
         this.originOrClassList = originOrClassList;
-    
-        console.log('building database with the json file');
-
+        
         this._tournamentName = data.tournamentName;
         console.log('[System] Welcome to ' + this._tournamentName);
 

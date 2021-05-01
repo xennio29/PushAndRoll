@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { forkJoin } from 'rxjs';
-import { DataService, DataType } from '../data-model/data/data.service';
+import { DataService } from '../data-model/data/data.service';
 import { Match } from '../data-model/model/match';
 import { Player } from '../data-model/model/player';
 
@@ -15,67 +15,61 @@ export class RankingsComponent implements OnInit {
   displayedColumns = ['rank', 'pseudo', 'score'];
   dataSource = new MatTableDataSource<RankPlayer>([]);
 
-  players: Player[];
-  matchsRonde1: Match[];
-  matchsRonde2: Match[];
-  matchsRonde3: Match[];
-
   constructor(private dataService: DataService) {
 
-    this.dataService.playerEmitter.subscribe( result => {
-      this.players = result;
+    forkJoin({
+      player: this.dataService.getPlayers(),
+      round1: this.dataService.getRound1(),
+      round2: this.dataService.getRound2(),
+      round3: this.dataService.getRound3()
+    }).subscribe( result => {
+      this.generateDataSource(result.player, [result.round1, result.round2, result.round3]);
     });
-
-    this.dataService.ronde1Emitter.subscribe( result => {
-      this.matchsRonde1 = result;
-    });
-    this.dataService.ronde2Emitter.subscribe( result => {
-      this.matchsRonde2 = result;
-    });
-    this.dataService.ronde3Emitter.subscribe( result => {
-      this.matchsRonde3 = result;
-      this.generateDataSource();
-    });
-
-    this.dataService.askData(DataType.Players, DataType.Ronde1, DataType.Ronde2, DataType.Ronde3);
-
-
   }
 
   ngOnInit(): void {
   }
 
-  generateDataSource(): void {
+  /**
+   * Generate the score board with all the players with their result in different matchs.
+   * @param players
+   * @param matchs
+   */
+  generateDataSource(players: Player[], matchs: Match[][]): void {
 
     const rankPlayers: RankPlayer[] = [];
-
-    this.players.forEach( player => {
+    players.forEach( player => {
       rankPlayers.push(new RankPlayer(player));
     });
 
-    this.computeScore(rankPlayers);
+    this.computeScore(rankPlayers, matchs);
 
     rankPlayers.sort(this.rankSort);
-
     this.dataSource =  new MatTableDataSource<RankPlayer>(rankPlayers);
-
   }
 
+  /**
+   * Add score for each match to players.
+   * @param rankPlayers 
+   */
+  computeScore(rankPlayers: RankPlayer[], matchs: Match[][]): void {
+
+    matchs.forEach( (round: Match[]) => {
+      this.computeScoreForMatch(rankPlayers, round);
+    });
+  }
+  
+  /**
+   * Sort function for players by ranking
+   */
   rankSort(a: RankPlayer, b: RankPlayer): number {
     return b.score - a.score;
   }
 
-  computeScore(rankPlayers: RankPlayer[]): void {
 
-    this.computeScoreForMatch(rankPlayers, this.matchsRonde1);
-    this.computeScoreForMatch(rankPlayers, this.matchsRonde2);
-    this.computeScoreForMatch(rankPlayers, this.matchsRonde3);
+  computeScoreForMatch(rankPlayers: RankPlayer[], round: Match[]) {
 
-  }
-
-  computeScoreForMatch(rankPlayers: RankPlayer[], ronde: Match[]) {
-
-    ronde.forEach (match => {
+    round.forEach (match => {
 
       if (match.place1) {
         rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place1).addScore(10);
@@ -88,16 +82,13 @@ export class RankingsComponent implements OnInit {
         if (match.place7) {
           rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place7).addScore(2);
         }
-  
         if (match.place8) {
           rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place8).addScore(1);
         }
 
       }
     });
-    
   }
-
 }
 
 class RankPlayer {
@@ -112,7 +103,6 @@ class RankPlayer {
 
       // TODO add new challenge
     }
-    
   }
 
   addScore(score: number): void {

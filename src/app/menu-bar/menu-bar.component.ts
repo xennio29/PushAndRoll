@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { DataService, DataType } from '../data-model/data/data.service';
+import { DataService } from '../data-model/data/data.service';
 
 @Component({
   selector: 'pr-menu-bar',
@@ -22,10 +22,9 @@ export class MenuBarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.dataService.tournamentNameEmitter.subscribe(result => {
+    this.dataService.getTournamentName().subscribe(result => {
       this.tournamentName = result;
     })
-    this.dataService.askData(DataType.TournamentName);
 
     this.router.events.subscribe( event => {
       if (event instanceof NavigationEnd) {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService, DataType } from '../data-model/data/data.service';
+import { DataService } from '../data-model/data/data.service';
 import { Match } from '../data-model/model/match';
 
 @Component({
@@ -14,17 +14,15 @@ export class MatchsComponent implements OnInit {
   matchsRonde3: Match[];
 
   constructor(private dataService: DataService) {
-    this.dataService.ronde1Emitter.subscribe( result => {
+    this.dataService.getRound1().subscribe( result => {
       this.matchsRonde1 = result;
     });
-    this.dataService.ronde2Emitter.subscribe( result => {
+    this.dataService.getRound2().subscribe( result => {
       this.matchsRonde2 = result;
     });
-    this.dataService.ronde3Emitter.subscribe( result => {
+    this.dataService.getRound3().subscribe( result => {
       this.matchsRonde3 = result;
     });
-
-    this.dataService.askData(DataType.Ronde1, DataType.Ronde2, DataType.Ronde3);
   }
 
   ngOnInit(): void {
