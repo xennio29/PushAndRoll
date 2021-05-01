@@ -16,6 +16,7 @@ import { MatchsComponent } from './matchs/matchs.component';
 import { MatchComponent } from './matchs/match/match.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PlanningComponent } from './planning/planning.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatchsComponent,
     MatchComponent,
     SideBarComponent,
+    PlanningComponent,
   ],
   imports: [
     BrowserModule,

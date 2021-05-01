@@ -43,6 +43,8 @@ export class MenuBarComponent implements OnInit {
         return 'Réglement';
       case '/pods':
         return 'Pods';
+        case '/planning':
+        return 'Planning';
       case '/matchs':
         return 'Matchs';
       case '/rankings':

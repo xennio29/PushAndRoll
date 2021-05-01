@@ -4,6 +4,7 @@ export class Match {
     public pod1: Pod;
     public pod2: Pod;
     public date: string;
+    public matchName: string;
 
     public place1: string;
     public place2: string;
@@ -29,6 +30,8 @@ export class Match {
     ) {
         this.pod1 = pod1;
         this.pod2 = pod2;
+
+        this.defineMatchName();
 
         this.date = date;
 
@@ -100,6 +103,11 @@ export class Match {
             return true;
         }
 
+    }
+
+    private defineMatchName() {
+        this.matchName = this.pod1.originOrClass.getFrenchName() + ' et ' + this.pod2.originOrClass.getFrenchName()
+        + ' // ' + this.pod1.originOrClass.getEnglishName() + ' and ' + this.pod2.originOrClass.getEnglishName();
     }
 
 

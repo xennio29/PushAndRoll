@@ -42,7 +42,7 @@ export class OriginOrClassList {
         this.list.set(EOriginOrClass.DRACONIC,
             new OriginOrClass('Draconic', 'Draconique', 'assets/img/OriginOrClass/Draconic_TFT_icon.png'));
         this.list.set(EOriginOrClass.RANGER,
-            new OriginOrClass('Ranger', 'Eclaireur', 'assets/img/OriginOrClass/Ranger_TFT_icon.png'));
+            new OriginOrClass('Ranger', 'Éclaireur', 'assets/img/OriginOrClass/Ranger_TFT_icon.png'));
         this.list.set(EOriginOrClass.FORGOTTEN,
             new OriginOrClass('Forgotten', 'Oublié', 'assets/img/OriginOrClass/Forgotten_TFT_icon.png'));
         this.list.set(EOriginOrClass.HELLION,

@@ -1,0 +1,11 @@
+<div class ="container" fxLayoutGap="15%">
+    <div *ngFor="let round of rounds; let i = index;">
+        <h1>Round {{i + 1}}</h1>
+        <div *ngFor="let match of round; let j = index;">
+            <h2>{{match.date}} : {{match.matchName}}</h2>
+        </div>
+        <div *ngIf="round.length === 0">
+            <p>There is no match on this round.</p>
+        </div>
+    </div>
+</div>
