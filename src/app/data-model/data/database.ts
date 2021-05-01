@@ -2,6 +2,7 @@ import { Match } from "../model/match";
 import { OriginOrClassList } from "../model/OriginOrClass";
 import { Player } from "../model/player";
 import { Pod } from "../model/pod";
+import { Rules } from "../model/rules";
 
 
 /**
@@ -11,7 +12,7 @@ export class DataBase {
 
 
     private _tournamentName: string;
-    private _rules: any;
+    private _rules: string;
     private _players: Player[];
     private _pods: Pod[];
     private _matchsRonde1: Match[];
@@ -27,9 +28,9 @@ export class DataBase {
         this._tournamentName = data.tournamentName;
         console.log('[System] Welcome to ' + this._tournamentName);
 
-        this._rules = data.rules;
-        console.log("[System] load " + this._rules.chapters.size + "chapters")
-    
+        this._rules = this.constructRules(data.rules);
+        console.log("[System] generate rules with " + this._rules.length + " characters")
+
         this._players = this.constructPlayers(data.players);
         console.log('[System] ' + this._players.length + ' players imported.');
     
@@ -46,34 +47,40 @@ export class DataBase {
         console.log('[System] ' + this._matchsRonde3.length + ' matchs imported for ronde 3');
     };
 
-    getTournamentName() {
+    getTournamentName(): string {
         return this._tournamentName;
     }
 
-    getRules() {
+    getRules(): string {
         return this._rules;
     }
 
-    getPlayers() {
+    getPlayers(): Player[] {
         return this._players;
     }
 
-    getPods() {
+    getPods(): Pod[] {
         return this._pods;
     }
 
-    getRonde1() {
+    getRonde1(): Match[] {
         return this._matchsRonde1;
     }
 
-    getRonde2() {
+    getRonde2(): Match[] {
         return this._matchsRonde2;
     }
 
-    getRonde3() {
+    getRonde3(): Match[] {
         return this._matchsRonde3;
     }
 
+    // RULES CONSTRUCTION
+    /////////////////////
+
+    private constructRules(rules): string {
+        return new Rules(rules).getContent();
+    }
 
 
     // PLAYER CONSTRUCTION

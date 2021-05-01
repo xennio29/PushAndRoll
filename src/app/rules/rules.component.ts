@@ -15,13 +15,7 @@ export class RulesComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getRules().subscribe(rules => {
-      console.log(rules);
-      this.addTitle(rules.title);
+      this.allRules = rules;
     });
   }
-
-  addTitle(title: string) {
-    this.allRules = this.allRules + `<h1>` + title + `</h1>`;
-  }
-
 }

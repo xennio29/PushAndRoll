@@ -43,7 +43,7 @@ export class DataService {
     return this.databaseCall('getTournamentName');
   }
 
-  getRules(): Observable<any> {
+  getRules(): Observable<string> {
     return this.databaseCall('getRules');
   }
 
