@@ -288,32 +288,32 @@
 	"challenges" : [
 		{
 			"name" : "my amazing challenge 1",
-			"icon" : "LooksOne",
+			"icon" : "looks_one",
 			"description": "amazing 1"
 		},
 		{
 			"name" : "my amazing challenge 2",
-			"icon" : "LooksTwo",
+			"icon" : "looks_two",
 			"description": "amazing 2"
 		},
 		{
 			"name" : "my amazing challenge 3",
-			"icon" : "Looks3",
+			"icon" : "looks_3",
 			"description": "amazing 3"
 		},
 		{
 			"name" : "my amazing challenge 4",
-			"icon" : "Looks4",
+			"icon" : "looks_4",
 			"description": "amazing 4"
 		},
 		{
 			"name" : "my amazing challenge 5",
-			"icon" : "Looks5",
+			"icon" : "looks_5",
 			"description": "amazing 5"
 		},
 		{
 			"name" : "my amazing challenge 6",
-			"icon" : "Looks6",
+			"icon" : "looks_6",
 			"description": "amazing 6"
 		}
 	],
