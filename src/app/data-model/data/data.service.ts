@@ -1,6 +1,7 @@
 import { EventEmitter } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Challenge } from '../model/challenge';
 import { Match } from '../model/match';
 import { Player } from '../model/player';
 import { Pod } from '../model/pod';
@@ -53,6 +54,10 @@ export class DataService {
 
   getPods(): Observable<Pod[]> {
     return this.databaseCall('getPods');
+  }
+
+  getChallenges(): Observable<Challenge[]> {
+    return this.databaseCall('getChallenges');
   }
 
   getRound1(): Observable<Match[]> {

@@ -1,3 +1,4 @@
+import { Challenge } from "../model/challenge";
 import { Match } from "../model/match";
 import { OriginOrClassList } from "../model/OriginOrClass";
 import { Player } from "../model/player";
@@ -15,6 +16,7 @@ export class DataBase {
     private _rules: string;
     private _players: Player[];
     private _pods: Pod[];
+    private _challenges: Challenge[];
     private _matchsRonde1: Match[];
     private _matchsRonde2: Match[];
     private _matchsRonde3: Match[];
@@ -29,7 +31,10 @@ export class DataBase {
         console.log('[System] Welcome to ' + this._tournamentName);
 
         this._rules = this.constructRules(data.rules);
-        console.log("[System] generate rules with " + this._rules.length + " characters")
+        console.log("[System] generate rules with " + this._rules.length + " characters");
+
+        this._challenges = this.constructChallenges(data.challenges);
+        console.log('[System] ' + this._challenges.length + ' challenge imported.');
 
         this._players = this.constructPlayers(data.players);
         console.log('[System] ' + this._players.length + ' players imported.');
@@ -63,6 +68,10 @@ export class DataBase {
         return this._pods;
     }
 
+    getChallenges(): Challenge[] {
+        return this._challenges;
+    }
+
     getRonde1(): Match[] {
         return this._matchsRonde1;
     }
@@ -82,6 +91,27 @@ export class DataBase {
         return new Rules(rules).getContent();
     }
 
+     // CHALLENGE CONSTRUCTION
+    /////////////////////////
+
+    private constructChallenges(challenges): Challenge[] {
+        
+        const tournamentChallenges: Challenge[] = [];
+
+        challenges.forEach(challenge => {
+            tournamentChallenges.push(this.toChallengeDomain(challenge));      
+        });
+        return tournamentChallenges;
+    }
+
+    private toChallengeDomain(challenge): Challenge {
+        return new Challenge(
+            challenge.name,
+            challenge.icon,
+            challenge.description
+        )
+    }
+
 
     // PLAYER CONSTRUCTION
     //////////////////////
@@ -97,12 +127,23 @@ export class DataBase {
     }
 
     private toPlayerDomain(player): Player {
+        const challenges: Challenge[] = [];
+        if(player.challenges !== undefined) {
+            player.challenges.forEach(challengeName => {
+                const foundChallenge = this._challenges.find(challenge => challenge.name === challengeName);
+                if (foundChallenge !== undefined) {
+                    challenges.push(foundChallenge);
+                } else {
+                    console.error("No correponding Challenge found for " + challengeName);
+                }
+            });
+        }
         return new Player(
         player.id,
         player.firstName,
         player.lastName,
         player.pseudo,
-        player.challenges
+        challenges
         );
     }
 
@@ -117,7 +158,6 @@ export class DataBase {
         });
 
         this.checkDoublons(tournamentPods);
-
         this.checkNoPodPlayer(tournamentPods);
 
         return tournamentPods;
@@ -157,7 +197,6 @@ export class DataBase {
             }
         });
         });
-
     }
 
     private checkNoPodPlayer (tournamentPods: Pod[]) {
@@ -173,7 +212,6 @@ export class DataBase {
         if (players.length !== 0) {
             console.error('[DATA ERROR FOR PLAYER]: No pod for this player', players);
         }
-
     }
 
     // MATCH CONSTRUCTION
@@ -185,7 +223,6 @@ export class DataBase {
         matchs.forEach(match => {
         tournamentMatchs.push(this.toMatchDomain(match));      
         });
-
         return tournamentMatchs;
     }
 
