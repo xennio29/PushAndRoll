@@ -285,6 +285,33 @@
 		}
 	],
 
+	"challenges" : [
+		{
+			"name" : "my amazing challenge 1",
+			"icon" : "LooksOne"
+		},
+		{
+			"name" : "my amazing challenge 2",
+			"icon" : "LooksTwo"
+		},
+		{
+			"name" : "my amazing challenge 3",
+			"icon" : "Looks3"
+		},
+		{
+			"name" : "my amazing challenge 4",
+			"icon" : "Looks4"
+		},
+		{
+			"name" : "my amazing challenge 5",
+			"icon" : "Looks5"
+		},
+		{
+			"name" : "my amazing challenge 6",
+			"icon" : "Looks6"
+		}
+	],
+
 	"matchsRonde1" : [
 		{
 			"pod1" : "Assassin",
