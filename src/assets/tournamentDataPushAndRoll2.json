@@ -91,12 +91,46 @@
 			
 	},
 
+	"challenges" : [
+		{
+			"name" : "my amazing challenge 1",
+			"icon" : "looks_one",
+			"description": "amazing 1"
+		},
+		{
+			"name" : "my amazing challenge 2",
+			"icon" : "looks_two",
+			"description": "amazing 2"
+		},
+		{
+			"name" : "my amazing challenge 3",
+			"icon" : "looks_3",
+			"description": "amazing 3"
+		},
+		{
+			"name" : "my amazing challenge 4",
+			"icon" : "looks_4",
+			"description": "amazing 4"
+		},
+		{
+			"name" : "my amazing challenge 5",
+			"icon" : "looks_5",
+			"description": "amazing 5"
+		},
+		{
+			"name" : "my amazing challenge 6",
+			"icon" : "looks_6",
+			"description": "amazing 6"
+		}
+	],
+
 	"players": [
 		{
 			"id": 1,
 			"firstName": "player",
 			"lastName": "one",
-			"pseudo": "1"
+			"pseudo": "1",
+			"challenges" : ["my amazing challenge 6"]
 		},
 		{
 			"id": 2,
@@ -282,39 +316,6 @@
 			"player2" : 22,
 			"player3" : 23,
 			"player4" : 24
-		}
-	],
-
-	"challenges" : [
-		{
-			"name" : "my amazing challenge 1",
-			"icon" : "looks_one",
-			"description": "amazing 1"
-		},
-		{
-			"name" : "my amazing challenge 2",
-			"icon" : "looks_two",
-			"description": "amazing 2"
-		},
-		{
-			"name" : "my amazing challenge 3",
-			"icon" : "looks_3",
-			"description": "amazing 3"
-		},
-		{
-			"name" : "my amazing challenge 4",
-			"icon" : "looks_4",
-			"description": "amazing 4"
-		},
-		{
-			"name" : "my amazing challenge 5",
-			"icon" : "looks_5",
-			"description": "amazing 5"
-		},
-		{
-			"name" : "my amazing challenge 6",
-			"icon" : "looks_6",
-			"description": "amazing 6"
 		}
 	],
 
