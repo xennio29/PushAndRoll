@@ -327,14 +327,14 @@
 					"pod1" : "Assassin",
 					"pod2" : "Brawler",
 					"date" : "Mardi 12 janvier : 20H15",
-					"place1" : 1,
-					"place2" : 2,
-					"place3" : 3,
-					"place4" : 4,
-					"place5" : 5,
-					"place6" : 6,
-					"place7" : 7,
-					"place8" : 8
+					"place1" : "1",
+					"place2" : "2",
+					"place3" : "3",
+					"place4" : "4",
+					"place5" : "5",
+					"place6" : "6",
+					"place7" : "7",
+					"place8" : "8"
 				},
 				{
 					"pod1" : "Cavalier",
