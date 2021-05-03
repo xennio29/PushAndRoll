@@ -319,27 +319,34 @@
 		}
 	],
 
-	"matchsRonde1" : [
+	"allMatchs" : [
 		{
-			"pod1" : "Assassin",
-			"pod2" : "Brawler",
-			"date" : "Mardi 12 janvier : 20H15"
+			"description" : "ronde 1",
+			"matchs" : [
+				{
+					"pod1" : "Assassin",
+					"pod2" : "Brawler",
+					"date" : "Mardi 12 janvier : 20H15"
+				},
+				{
+					"pod1" : "Cavalier",
+					"pod2" : "Draconic",
+					"date" : "Mercredi 13 janvier : 19H45"
+				},
+				{
+					"pod1" : "Ranger",
+					"pod2" : "Forgotten",
+					"date" : "Mercredi 13 janvier : 20H45"
+				}
+			]
 		},
 		{
-			"pod1" : "Cavalier",
-			"pod2" : "Draconic",
-			"date" : "Mercredi 13 janvier : 19H45"
+			"description" : "ronde 2",
+			"matchs" : []
 		},
 		{
-			"pod1" : "Ranger",
-			"pod2" : "Forgotten",
-			"date" : "Mercredi 13 janvier : 20H45"
+			"description" : "ronde 3",
+			"matchs" : []
 		}
-	],
-
-	"matchsRonde2" : [
-	],
-
-	"matchsRonde3" : [
 	]
 }
