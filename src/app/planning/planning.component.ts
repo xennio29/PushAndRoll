@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data-model/data/data.service';
-import { Match } from '../data-model/model/match';
+import { Round } from '../data-model/model/Round';
 
 @Component({
   selector: 'pr-planning',
@@ -9,18 +9,10 @@ import { Match } from '../data-model/model/match';
 })
 export class PlanningComponent implements OnInit {
 
-  rounds: Match[][] = [];
+  rounds: Round[] = [];
 
   constructor(private dataService: DataService) {
-    this.dataService.getRound1().subscribe( result => {
-      this.rounds.push(result);
-    });
-    this.dataService.getRound2().subscribe( result => {
-      this.rounds.push(result);
-    });
-    this.dataService.getRound3().subscribe( result => {
-      this.rounds.push(result);
-    });
+    this.dataService.getAllMatch().subscribe(result => this.rounds = result);
   }
 
   ngOnInit(): void {

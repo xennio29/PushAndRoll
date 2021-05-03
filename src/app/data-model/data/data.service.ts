@@ -2,9 +2,9 @@ import { EventEmitter } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Challenge } from '../model/challenge';
-import { Match } from '../model/match';
 import { Player } from '../model/player';
 import { Pod } from '../model/pod';
+import { Round } from '../model/Round';
 import { DataBase } from './database';
 import { DataBaseProvider } from './DataBaseProvider';
 
@@ -18,9 +18,7 @@ export class DataService {
 
   constructor(private dataBaseProvider: DataBaseProvider) { 
 
-    dataBaseProvider.databaseEmitter.subscribe( result => {
-      this.database = result;
-    });
+    dataBaseProvider.databaseEmitter.subscribe( result => this.database = result);
 
     dataBaseProvider.loadDatabase();
   }
@@ -60,15 +58,7 @@ export class DataService {
     return this.databaseCall('getChallenges');
   }
 
-  getRound1(): Observable<Match[]> {
-    return this.databaseCall('getRonde1');
-  }
-
-  getRound2(): Observable<Match[]> {
-    return this.databaseCall('getRonde2');
-  }
-
-  getRound3(): Observable<Match[]> {
-    return this.databaseCall('getRonde3');
+  getAllMatch(): Observable<Round[]> {
+    return this.databaseCall('getAllMatchs');
   }
 }

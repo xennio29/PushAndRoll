@@ -4,6 +4,7 @@ import { forkJoin } from 'rxjs';
 import { DataService } from '../data-model/data/data.service';
 import { Match } from '../data-model/model/match';
 import { Player } from '../data-model/model/player';
+import { Round } from '../data-model/model/Round';
 
 @Component({
   selector: 'pr-rankings',
@@ -19,30 +20,26 @@ export class RankingsComponent implements OnInit {
 
     forkJoin({
       player: this.dataService.getPlayers(),
-      round1: this.dataService.getRound1(),
-      round2: this.dataService.getRound2(),
-      round3: this.dataService.getRound3()
-    }).subscribe( result => {
-      this.generateDataSource(result.player, [result.round1, result.round2, result.round3]);
-    });
+      rounds: this.dataService.getAllMatch()
+    }).subscribe(result => this.generateDataSource(result.player, result.rounds));
   }
 
   ngOnInit(): void {
   }
 
   /**
-   * Generate the score board with all the players with their result in different matchs.
+   * Generate the score board with all the players with their result in different matchs in all round.
    * @param players
    * @param matchs
    */
-  generateDataSource(players: Player[], matchs: Match[][]): void {
+  generateDataSource(players: Player[], rounds: Round[]): void {
 
     const rankPlayers: RankPlayer[] = [];
     players.forEach( player => {
       rankPlayers.push(new RankPlayer(player));
     });
 
-    this.computeScore(rankPlayers, matchs);
+    this.computeScoreForRounds(rankPlayers, rounds);
 
     rankPlayers.sort(this.rankSort);
     this.dataSource =  new MatTableDataSource<RankPlayer>(rankPlayers);
@@ -52,11 +49,9 @@ export class RankingsComponent implements OnInit {
    * Add score for each match to players.
    * @param rankPlayers 
    */
-  computeScore(rankPlayers: RankPlayer[], matchs: Match[][]): void {
+  computeScoreForRounds(rankPlayers: RankPlayer[], rounds: Round[]): void {
 
-    matchs.forEach( (round: Match[]) => {
-      this.computeScoreForMatch(rankPlayers, round);
-    });
+    rounds.forEach (round => this.computeScoreARound(rankPlayers, round.matchs));
   }
   
   /**
@@ -67,9 +62,9 @@ export class RankingsComponent implements OnInit {
   }
 
 
-  computeScoreForMatch(rankPlayers: RankPlayer[], round: Match[]) {
+  computeScoreARound(rankPlayers: RankPlayer[], matchsOfTheRound: Match[]) {
 
-    round.forEach (match => {
+    matchsOfTheRound.forEach (match => {
 
       if (match.place1) {
         rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place1).addScore(10);

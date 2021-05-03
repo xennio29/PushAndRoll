@@ -3,6 +3,7 @@ import { Match } from "../model/match";
 import { OriginOrClassList } from "../model/OriginOrClass";
 import { Player } from "../model/player";
 import { Pod } from "../model/pod";
+import { Round } from "../model/Round";
 import { Rules } from "../model/rules";
 
 
@@ -17,9 +18,7 @@ export class DataBase {
     private _players: Player[];
     private _pods: Pod[];
     private _challenges: Challenge[];
-    private _matchsRonde1: Match[];
-    private _matchsRonde2: Match[];
-    private _matchsRonde3: Match[];
+    private _allMatchs : Round[]
 
     private originOrClassList: OriginOrClassList;
 
@@ -31,7 +30,7 @@ export class DataBase {
         console.log('[System] Welcome to ' + this._tournamentName);
 
         this._rules = this.constructRules(data.rules);
-        console.log("[System] generate rules with " + this._rules.length + " characters");
+        console.log("[System] Generate rules with " + this._rules.length + " characters");
 
         this._challenges = this.constructChallenges(data.challenges);
         console.log('[System] ' + this._challenges.length + ' challenge imported.');
@@ -41,15 +40,9 @@ export class DataBase {
     
         this._pods = this.constructPods(data.pods);
         console.log('[System] ' + this._pods.length + ' pods imported.');
-    
-        this._matchsRonde1 = this.constructMatchs(data.matchsRonde1);
-        console.log('[System] ' + this._matchsRonde1.length + ' matchs imported for ronde 1');
-    
-        this._matchsRonde2 = this.constructMatchs(data.matchsRonde2);
-        console.log('[System] ' + this._matchsRonde2.length + ' matchs imported for ronde 2');
-    
-        this._matchsRonde3 = this.constructMatchs(data.matchsRonde3);
-        console.log('[System] ' + this._matchsRonde3.length + ' matchs imported for ronde 3');
+
+        this._allMatchs = this.constructAllMatchs(data.allMatchs);
+        console.log('[System] ' + this._allMatchs.length + ' rounds imported.');
     };
 
     getTournamentName(): string {
@@ -72,16 +65,8 @@ export class DataBase {
         return this._challenges;
     }
 
-    getRonde1(): Match[] {
-        return this._matchsRonde1;
-    }
-
-    getRonde2(): Match[] {
-        return this._matchsRonde2;
-    }
-
-    getRonde3(): Match[] {
-        return this._matchsRonde3;
+    getAllMatchs(): Round[] {
+        return this._allMatchs;
     }
 
     // RULES CONSTRUCTION
@@ -95,12 +80,8 @@ export class DataBase {
     /////////////////////////
 
     private constructChallenges(challenges): Challenge[] {
-        
         const tournamentChallenges: Challenge[] = [];
-
-        challenges.forEach(challenge => {
-            tournamentChallenges.push(this.toChallengeDomain(challenge));      
-        });
+        challenges.forEach(challenge => tournamentChallenges.push(this.toChallengeDomain(challenge)));
         return tournamentChallenges;
     }
 
@@ -118,11 +99,7 @@ export class DataBase {
 
     private constructPlayers(players): Player[] {
         const tournamentPlayers: Player[] = [];
-
-        players.forEach(player => {
-        tournamentPlayers.push(this.toPlayerDomain(player));      
-        });
-
+        players.forEach(player => tournamentPlayers.push(this.toPlayerDomain(player)));
         return tournamentPlayers;
     }
 
@@ -152,14 +129,10 @@ export class DataBase {
 
     private constructPods(pods): Pod[] {
         const tournamentPods: Pod[] = [];
-
-        pods.forEach(pod => {
-        tournamentPods.push(this.toPodDomain(pod));      
-        });
+        pods.forEach(pod => tournamentPods.push(this.toPodDomain(pod)));
 
         this.checkDoublons(tournamentPods);
         this.checkNoPodPlayer(tournamentPods);
-
         return tournamentPods;
     }
 
@@ -204,9 +177,7 @@ export class DataBase {
 
         tournamentPods.forEach(pod => {
 
-            pod.playersPseudo.forEach(playerPseudo => {
-                players.splice(players.findIndex(player => player.pseudo === playerPseudo), 1)
-            });
+            pod.playersPseudo.forEach(playerPseudo => players.splice(players.findIndex(player => player.pseudo === playerPseudo), 1));
         });
 
         if (players.length !== 0) {
@@ -217,13 +188,19 @@ export class DataBase {
     // MATCH CONSTRUCTION
     //////////////////////
 
-    private constructMatchs(matchs): Match[] {
-        const tournamentMatchs: Match[] = [];
+    private constructAllMatchs(allMatchs): Round[] {
+        const tournamentRounds: Round[] = [];
+        allMatchs.forEach(round => tournamentRounds.push(this.toRoundDomain(round)));
+        return tournamentRounds;
+    }
 
-        matchs.forEach(match => {
-        tournamentMatchs.push(this.toMatchDomain(match));      
-        });
-        return tournamentMatchs;
+    private toRoundDomain(round): Round {
+        const roundMatch: Match[] = [];
+        round.matchs.forEach (match => roundMatch.push(this.toMatchDomain(match)));
+        return new Round(
+            round.description,
+            roundMatch
+        );
     }
 
     private toMatchDomain(match): Match {
