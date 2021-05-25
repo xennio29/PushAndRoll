@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { forkJoin } from 'rxjs';
-import { DataService, DataType } from '../data-model/data/data.service';
+import { DataService } from '../data-model/data/data.service';
 import { Match } from '../data-model/model/match';
 import { Player } from '../data-model/model/player';
+import { Round } from '../data-model/model/Round';
 
 @Component({
   selector: 'pr-rankings',
@@ -15,67 +16,55 @@ export class RankingsComponent implements OnInit {
   displayedColumns = ['rank', 'pseudo', 'score'];
   dataSource = new MatTableDataSource<RankPlayer>([]);
 
-  players: Player[];
-  matchsRonde1: Match[];
-  matchsRonde2: Match[];
-  matchsRonde3: Match[];
-
   constructor(private dataService: DataService) {
 
-    this.dataService.playerEmitter.subscribe( result => {
-      this.players = result;
-    });
-
-    this.dataService.ronde1Emitter.subscribe( result => {
-      this.matchsRonde1 = result;
-    });
-    this.dataService.ronde2Emitter.subscribe( result => {
-      this.matchsRonde2 = result;
-    });
-    this.dataService.ronde3Emitter.subscribe( result => {
-      this.matchsRonde3 = result;
-      this.generateDataSource();
-    });
-
-    this.dataService.askData(DataType.Players, DataType.Ronde1, DataType.Ronde2, DataType.Ronde3);
-
-
+    forkJoin({
+      player: this.dataService.getPlayers(),
+      rounds: this.dataService.getAllMatch()
+    }).subscribe(result => this.generateDataSource(result.player, result.rounds));
   }
 
   ngOnInit(): void {
   }
 
-  generateDataSource(): void {
+  /**
+   * Generate the score board with all the players with their result in different matchs in all round.
+   * @param players
+   * @param matchs
+   */
+  generateDataSource(players: Player[], rounds: Round[]): void {
 
     const rankPlayers: RankPlayer[] = [];
-
-    this.players.forEach( player => {
+    players.forEach( player => {
       rankPlayers.push(new RankPlayer(player));
     });
 
-    this.computeScore(rankPlayers);
+    this.computeScoreForRounds(rankPlayers, rounds);
 
     rankPlayers.sort(this.rankSort);
-
     this.dataSource =  new MatTableDataSource<RankPlayer>(rankPlayers);
-
   }
 
+  /**
+   * Add score for each match to players.
+   * @param rankPlayers 
+   */
+  computeScoreForRounds(rankPlayers: RankPlayer[], rounds: Round[]): void {
+
+    rounds.forEach (round => this.computeScoreARound(rankPlayers, round.matchs));
+  }
+  
+  /**
+   * Sort function for players by ranking
+   */
   rankSort(a: RankPlayer, b: RankPlayer): number {
     return b.score - a.score;
   }
 
-  computeScore(rankPlayers: RankPlayer[]): void {
 
-    this.computeScoreForMatch(rankPlayers, this.matchsRonde1);
-    this.computeScoreForMatch(rankPlayers, this.matchsRonde2);
-    this.computeScoreForMatch(rankPlayers, this.matchsRonde3);
+  computeScoreARound(rankPlayers: RankPlayer[], matchsOfTheRound: Match[]) {
 
-  }
-
-  computeScoreForMatch(rankPlayers: RankPlayer[], ronde: Match[]) {
-
-    ronde.forEach (match => {
+    matchsOfTheRound.forEach (match => {
 
       if (match.place1) {
         rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place1).addScore(10);
@@ -88,16 +77,13 @@ export class RankingsComponent implements OnInit {
         if (match.place7) {
           rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place7).addScore(2);
         }
-  
         if (match.place8) {
           rankPlayers.find( rankPlayer => rankPlayer.pseudo === match.place8).addScore(1);
         }
 
       }
     });
-    
   }
-
 }
 
 class RankPlayer {
@@ -109,14 +95,9 @@ class RankPlayer {
     this.pseudo = player.pseudo;
     this.score = 0;
     if (player.challenges) {
-      if (player.challenges.missCalculation) { this.addScore(1); }
-      if (player.challenges.FoN) { this.addScore(1); }
-      if (player.challenges.quatreALaSuite) { this.addScore(1); }
-      if (player.challenges.oneV9) { this.addScore(1); }
-      if (player.challenges.familyFirst) { this.addScore(1); }
-      if (player.challenges.turboHighrolleur) { this.addScore(1); }
+
+      // TODO add new challenge
     }
-    
   }
 
   addScore(score: number): void {

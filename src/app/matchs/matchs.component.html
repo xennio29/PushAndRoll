@@ -1,14 +1,12 @@
 <div class ="container" fxLayoutGap="15%">
 
     <mat-tab-group>
-        <mat-tab label="Ronde 1">
+        <mat-tab *ngFor="let round of rounds;" label={{round.description}}>
             <ng-template matTabContent>
-                <pr-match [match]="matchsRonde1[i]" *ngFor="let match of matchsRonde1; let i = index;"></pr-match>
-            </ng-template>
-        </mat-tab>
-        <mat-tab label="Ronde 2">
-            <ng-template matTabContent>
-                <pr-match [match]="matchsRonde2[i]" *ngFor="let match of matchsRonde2; let i = index;"></pr-match>
+                <pr-match [match]="match" *ngFor="let match of round.matchs;"></pr-match>
+                <div *ngIf="round.matchs.length === 0">
+                    <p>There is no match on this round.</p>
+                </div>
             </ng-template>
         </mat-tab>
       </mat-tab-group>

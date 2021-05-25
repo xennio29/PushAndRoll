@@ -23,11 +23,11 @@ export class MatchComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const originAndClassName1 = this.match.pod1.getOriginOrClassName();
-    const originAndClassName2 = this.match.pod2.getOriginOrClassName();
+    const originAndClassPod1 = this.match.pod1.originOrClass;
+    const originAndClassPod2 = this.match.pod2.originOrClass;
 
-    this.matchName = originAndClassName1.francais + ' and ' + originAndClassName2.francais
-                + ' // ' + originAndClassName1.english + ' et ' + originAndClassName2.english;
+    this.matchName = originAndClassPod1.getFrenchName() + ' and ' + originAndClassPod2.getFrenchName()
+                + ' // ' + originAndClassPod1.getEnglishName() + ' et ' + originAndClassPod2.getEnglishName();
 
     this.matchDate = this.match.date;
 

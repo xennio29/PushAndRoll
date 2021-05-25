@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Player } from 'src/app/data-model/model/player';
-import { OriginOrClassName, Pod } from 'src/app/data-model/model/pod';
+import { Pod } from 'src/app/data-model/model/pod';
 
 @Component({
   selector: 'pr-pod',
@@ -13,19 +12,19 @@ export class PodComponent implements OnInit {
 
   playersPod: string[] = [];
   logo: string;
-  name: OriginOrClassName;
-
+  englishName: string;
+  frenchName: string;
 
   constructor() {}
 
   ngOnInit(): void {
 
-    this.logo = this.pod.getOriginOrClassLogo();
+    const originOrClassPod = this.pod.originOrClass;
+    this.englishName = originOrClassPod.getEnglishName();
+    this.frenchName = originOrClassPod.getFrenchName();
+    this.logo = originOrClassPod.getLogoPath();
     this.pod.playersPseudo.forEach(pseudo => {
       this.playersPod.push(pseudo);
     });
-
-    this.name = this.pod.getOriginOrClassName();
   }
-
 }

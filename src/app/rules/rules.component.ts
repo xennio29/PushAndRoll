@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data-model/data/data.service';
 
 @Component({
   selector: 'pr-rules',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RulesComponent implements OnInit {
 
-  constructor() {
-    // TODO : Add rules
+  allRules: string = "";
+
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
+    this.dataService.getRules().subscribe(rules => {
+      this.allRules = rules;
+    });
   }
-
 }

@@ -5,7 +5,7 @@
         </button>
     </div>
     <div class="home" routerLink="/home">
-        <span>Push and Roll</span>
+        <span>{{tournamentName}}</span>
         <span fxHide.gt-xs> - {{rootName}}</span>
     </div>
     <div class="not-home" fxLayout="row" fxLayoutGap="5%" fxLayoutAlign="center center" fxHide.xs>
@@ -17,6 +17,9 @@
         </div>
         <div class="menu" routerLink="/pods" routerLinkActive="is-active">
             <span>Pods</span>
+        </div>
+        <div class="menu" routerLink="/planning" routerLinkActive="is-active">
+            <span>Planning</span>
         </div>
         <div class="menu" routerLink="/matchs" routerLinkActive="is-active">
             <span>Matchs</span>

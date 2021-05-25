@@ -4,6 +4,7 @@ export class Match {
     public pod1: Pod;
     public pod2: Pod;
     public date: string;
+    public matchName: string;
 
     public place1: string;
     public place2: string;
@@ -29,6 +30,8 @@ export class Match {
     ) {
         this.pod1 = pod1;
         this.pod2 = pod2;
+
+        this.defineMatchName();
 
         this.date = date;
 
@@ -92,14 +95,19 @@ export class Match {
         const matchPod1 = this.pod1.playersPseudo.find( p => p === pseudo) !== undefined;
         const matchPod2 = this.pod2.playersPseudo.find( p => p === pseudo) !== undefined;
         if (!matchPod1 && !matchPod2) {
-            console.error('[DATA ERROR FOR MATCH', this.pod1.getOriginOrClassName().english,
-                '&', this.pod2.getOriginOrClassName().english,
+            console.error('[DATA ERROR FOR MATCH', this.pod1.originOrClass.getEnglishName(),
+                '&', this.pod2.originOrClass.getEnglishName(),
                 ']: player', pseudo, 'is in neither pod');
             return false;
         } else {
             return true;
         }
 
+    }
+
+    private defineMatchName() {
+        this.matchName = this.pod1.originOrClass.getFrenchName() + ' et ' + this.pod2.originOrClass.getFrenchName()
+        + ' // ' + this.pod1.originOrClass.getEnglishName() + ' and ' + this.pod2.originOrClass.getEnglishName();
     }
 
 

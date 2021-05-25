@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MatchsComponent } from './matchs/matchs.component';
 import { ParticipantsComponent } from './participants/participants.component';
+import { PlanningComponent } from './planning/planning.component';
 import { PodsComponent } from './pods/pods.component';
 import { RankingsComponent } from './rankings/rankings.component';
 import { RulesComponent } from './rules/rules.component';
@@ -14,9 +15,11 @@ export const routes: Routes = [
 
   {path: 'pods', component: PodsComponent },
 
-  {path: 'rankings', component: RankingsComponent },
+  {path: 'planning', component: PlanningComponent },
 
   {path: 'matchs', component: MatchsComponent },
+
+  {path: 'rankings', component: RankingsComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
