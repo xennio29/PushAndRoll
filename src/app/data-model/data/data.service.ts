@@ -17,10 +17,8 @@ export class DataService {
   private database: DataBase = null;
 
   constructor(private dataBaseProvider: DataBaseProvider) { 
-
     dataBaseProvider.databaseEmitter.subscribe( result => this.database = result);
-
-    dataBaseProvider.loadDatabase();
+    dataBaseProvider.loadTestDatabse();
   }
 
   databaseCall( method: string ) {
@@ -40,6 +38,10 @@ export class DataService {
 
   getTournamentName(): Observable<string> {
     return this.databaseCall('getTournamentName');
+  }
+
+  getTournamentId(): Observable<string> {
+    return this.databaseCall('getTournamentId');
   }
 
   getRules(): Observable<string> {

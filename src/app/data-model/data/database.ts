@@ -12,8 +12,8 @@ import { Rules } from "../model/rules";
  */
 export class DataBase {
 
-
     private _tournamentName: string;
+    private _tournamentId: string;
     private _rules: string;
     private _players: Player[];
     private _pods: Pod[];
@@ -28,6 +28,9 @@ export class DataBase {
         
         this._tournamentName = data.tournamentName;
         console.log('[System] Welcome to ' + this._tournamentName);
+
+        this._tournamentId = data._tournamentId;
+        console.log('[System] Tournament Id is ' + this._tournamentId);
 
         this._rules = this.constructRules(data.rules);
         console.log("[System] Generate rules with " + this._rules.length + " characters");
@@ -47,6 +50,10 @@ export class DataBase {
 
     getTournamentName(): string {
         return this._tournamentName;
+    }
+
+    getTournamentId(): string {
+        return this._tournamentId;
     }
 
     getRules(): string {

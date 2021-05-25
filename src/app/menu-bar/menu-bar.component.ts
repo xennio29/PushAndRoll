@@ -15,6 +15,7 @@ export class MenuBarComponent implements OnInit {
   @Output() public sidenavToggle = new EventEmitter();
 
   tournamentName: string;
+  tournamentId: string;
 
   constructor(private dataService: DataService,
               private route: ActivatedRoute,
@@ -24,6 +25,10 @@ export class MenuBarComponent implements OnInit {
 
     this.dataService.getTournamentName().subscribe(result => {
       this.tournamentName = result;
+    })
+
+    this.dataService.getTournamentId().subscribe(result => {
+      this.tournamentId = result;
     })
 
     this.router.events.subscribe( event => {

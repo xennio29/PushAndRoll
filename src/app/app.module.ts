@@ -17,6 +17,8 @@ import { MatchComponent } from './matchs/match/match.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlanningComponent } from './planning/planning.component';
+import { GlobalHomeComponent } from './global-home/global-home.component';
+import { NotFound404Component } from './not-found404/not-found404.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { PlanningComponent } from './planning/planning.component';
     MatchComponent,
     SideBarComponent,
     PlanningComponent,
+    GlobalHomeComponent,
+    NotFound404Component,
   ],
   imports: [
     BrowserModule,

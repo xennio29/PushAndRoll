@@ -16,8 +16,21 @@ export class DataBaseProvider {
 
     constructor(private http: HttpClient, private originOrClassList: OriginOrClassList) {}
 
-    public loadDatabase(): void {
-        this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/tournamentDataPushAndRoll2.json').subscribe(data => {
+    public loadNantesDatabase(): void {
+        this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/tournamentDataPushAndRoll-Nantes.json').subscribe(data => {
+            const dataBase = new DataBase(data, this.originOrClassList);
+            this.databaseEmitter.emit(dataBase);
+        });
+    }
+    public loadToulouseDatabase(): void {
+        this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/tournamentDataPushAndRoll-Toulouse.json').subscribe(data => {
+            const dataBase = new DataBase(data, this.originOrClassList);
+            this.databaseEmitter.emit(dataBase);
+        });
+    }
+
+    public loadTestDatabse(): void {
+        this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/tournamentDataPushAndRoll-Test.json').subscribe(data => {
             const dataBase = new DataBase(data, this.originOrClassList);
             this.databaseEmitter.emit(dataBase);
         });

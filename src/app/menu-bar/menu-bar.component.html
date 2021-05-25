@@ -9,22 +9,22 @@
         <span fxHide.gt-xs> - {{rootName}}</span>
     </div>
     <div class="not-home" fxLayout="row" fxLayoutGap="5%" fxLayoutAlign="center center" fxHide.xs>
-        <div class="menu" routerLink="/participants" routerLinkActive="is-active">
+        <div class="menu" routerLink="{{tournamentId}}/participants" routerLinkActive="is-active">
             <span>Participants</span>
         </div>
-        <div class="menu" routerLink="/rules" routerLinkActive="is-active">
+        <div class="menu" routerLink="{{tournamentId}}/rules" routerLinkActive="is-active">
             <span>Réglement</span>
         </div>
-        <div class="menu" routerLink="/pods" routerLinkActive="is-active">
+        <div class="menu" routerLink="{{tournamentId}}/pods" routerLinkActive="is-active">
             <span>Pods</span>
         </div>
-        <div class="menu" routerLink="/planning" routerLinkActive="is-active">
+        <div class="menu" routerLink="{{tournamentId}}/planning" routerLinkActive="is-active">
             <span>Planning</span>
         </div>
-        <div class="menu" routerLink="/matchs" routerLinkActive="is-active">
+        <div class="menu" routerLink="{{tournamentId}}/matchs" routerLinkActive="is-active">
             <span>Matchs</span>
         </div>
-        <div class="menu" routerLink="/rankings" routerLinkActive="is-active">
+        <div class="menu" routerLink="{{tournamentId}}/rankings" routerLinkActive="is-active">
             <span>Classement</span>
         </div>
     </div>
