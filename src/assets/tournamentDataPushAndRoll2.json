@@ -93,34 +93,34 @@
 
 	"challenges" : [
 		{
-			"name" : "my amazing challenge 1",
-			"icon" : "looks_one",
-			"description": "amazing 1"
+			"name" : "Miss Calculation",
+			"icon" : "calculate",
+			"description": "Miss Calculation : mourir avec 50 po"
 		},
 		{
-			"name" : "my amazing challenge 2",
-			"icon" : "looks_two",
-			"description": "amazing 2"
+			"name" : "Drakaris",
+			"icon" : "local_fire_department",
+			"description": "Drakaris : Avoir 4 Draconique 3 étoiles"
 		},
 		{
-			"name" : "my amazing challenge 3",
+			"name" : "Dark Side",
 			"icon" : "looks_3",
-			"description": "amazing 3"
+			"description": "Dark side : Avoir 9 oublié et 4 objet de l'ombre"
 		},
 		{
-			"name" : "my amazing challenge 4",
+			"name" : "Fight!",
 			"icon" : "looks_4",
-			"description": "amazing 4"
+			"description": "Fight! : avoir 8 escarmoucheurs"
 		},
 		{
-			"name" : "my amazing challenge 5",
+			"name" : "Teemo Heaven",
 			"icon" : "looks_5",
-			"description": "amazing 5"
+			"description": "Teemo heaven : avoir 7 trublions"
 		},
 		{
-			"name" : "my amazing challenge 6",
-			"icon" : "looks_6",
-			"description": "amazing 6"
+			"name" : "The army",
+			"icon" : "groups",
+			"description": "The army : avoir Ivern, Heimerdinger, Kindred, Abomination et un Zzrot"
 		}
 	],
 
@@ -169,8 +169,8 @@
 		},
 		{
 			"id": 8,
-			"firstName": "un",
-			"lastName": "orga",
+			"firstName": "orga",
+			"lastName": "UN",
 			"pseudo": "organisateur"
 		}
 	],
