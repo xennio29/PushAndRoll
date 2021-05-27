@@ -104,17 +104,17 @@
 		},
 		{
 			"name" : "Dark Side",
-			"icon" : "looks_3",
+			"icon" : "brightness_1",
 			"description": "Dark side : Avoir 9 oublié et 4 objet de l'ombre"
 		},
 		{
 			"name" : "Fight!",
-			"icon" : "looks_4",
+			"icon" : "colorize",
 			"description": "Fight! : avoir 8 escarmoucheurs"
 		},
 		{
 			"name" : "Teemo Heaven",
-			"icon" : "looks_5",
+			"icon" : "pest_control_rodent",
 			"description": "Teemo heaven : avoir 7 trublions"
 		},
 		{
