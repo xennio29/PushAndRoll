@@ -14,9 +14,11 @@
 			"firstName": "Jérémy",
 			"lastName": "Jouet",
 			"pseudo": "Xeyway",
-			"agence": 588,
+			"agence": 1,
 			"challenges": {
-				"missCalculation" : true
+				"missCalculation" : true,
+				"familyFirst" : true,
+				"turboHighrolleur" : true
 			}
 		},
 		{
@@ -24,70 +26,87 @@
 			"firstName": "Feth-Allah",
 			"lastName": "Bentoumi",
 			"pseudo": "DKingyo",
-			"agence": 588
+			"agence": 1
 		},
 		{
 			"id": 4,
 			"firstName": "Pierre",
 			"lastName": "Stacke",
 			"pseudo": "Whilsker",
-			"agence": 588
+			"agence": 1
 		},
 		{
 			"id": 5,
 			"firstName": "Quentin",
 			"lastName": "Veyssade",
 			"pseudo": "Ussoper",
-			"agence": 4040
+			"agence": 1,
+			"challenges": {
+				"missCalculation" : true
+			}
 		},
 		{
 			"id": 6,
 			"firstName": "Quentin",
 			"lastName": "Pottier",
 			"pseudo": "Iluvatarr",
-			"agence": 588
+			"agence": 1,
+			"challenges": {
+				"familyFirst" : true
+			}
 		},
 		{
 			"id": 7,
 			"firstName": "Florian",
 			"lastName": "Schall",
 			"pseudo": "Zylboxx",
-			"agence": 1024
+			"agence": 1,
+			"challenges": {
+				"missCalculation" : true,
+				"familyFirst" : true
+			}
 		},
 		{
 			"id": 8,
 			"firstName": "Alexandre",
 			"lastName": "Groussier",
 			"pseudo": "iOvz",
-			"agence": 588
+			"agence": 1
 		},
 		{
 			"id": 9,
 			"firstName": "Valentin",
 			"lastName": "Dales",
 			"pseudo": "Aelgaid",
-			"agence": 1026
+			"agence": 1
 		},
 		{
 			"id": 10,
 			"firstName": "Thibault",
 			"lastName": "Janssen",
 			"pseudo": "SupraSky",
-			"agence": 588
+			"agence": 1,
+			"challenges": {
+				"missCalculation" : true
+			}
 		},
 		{
 			"id": 11,
 			"firstName": "Sebastien",
 			"lastName": "Poussard",
 			"pseudo": "Andreaoun",
-			"agence": 588
+			"agence": 1,
+			"challenges": {
+				"missCalculation" : true,
+				"familyFirst" : true
+			}
 		},
 		{
 			"id": 12,
 			"firstName": "Lucas",
 			"lastName": "Clement",
 			"pseudo": "Maître Cornichon",
-			"agence": 588
+			"agence": 1
 		}
 
 	],
@@ -133,27 +152,70 @@
 		{
 			"pod1" : "Brawler",
 			"pod2" : "Elderwood",
-			"date" : "Mercredi 13 janvier : 19H45"
+			"date" : "Mercredi 13 janvier : 19H45",
+			"place1" : "SupraSky",
+			"place2" : "Zylboxx",
+			"place3" : "Maître Cornichon",
+			"place4" : "Xeyway",
+			"place5" : "Whilsker",
+			"place6" : "DKingyo",
+			"place7" : "Aelgaid",
+			"place8" : "Luckymarmotte"
 		},
 		{
 			"pod1" : "Hunter",
 			"pod2" : "Elderwood",
-			"date" : "Mercredi 13 janvier : 20H45"
+			"date" : "Mercredi 13 janvier : 20H45",
+			"place1" : "iOvz",
+			"place2" : "Iluvatarr",
+			"place3" : "Ussoper",
+			"place4" : "Aelgaid",
+			"place5" : "Andreaoun",
+			"place6" : "SupraSky",
+			"place7" : "Maître Cornichon",
+			"place8" : "Zylboxx"
 		}
 	],
 
 	"matchsRonde2" : [
 		{
 			"pod1" : "Brawler",
-			"pod2" : "Hunter"
+			"pod2" : "Hunter",
+			"date" : "Vendredi 15 janvier : 19H30",
+			"place1" : "Xeyway",
+			"place2" : "Andreaoun",
+			"place3" : "iOvz",
+			"place4" : "Iluvatarr",
+			"place5" : "Whilsker",
+			"place6" : "DKingyo",
+			"place7" : "Ussoper",
+			"place8" : "Luckymarmotte"
 		},
 		{
 			"pod1" : "Brawler",
-			"pod2" : "Elderwood"
+			"pod2" : "Elderwood",
+			"date" : "Vendredi 15 janvier : 20H30",
+			"place1" : "Zylboxx",
+			"place2" : "Xeyway",
+			"place3" : "Aelgaid",
+			"place4" : "DKingyo",
+			"place5" : "Whilsker",
+			"place6" : "SupraSky",
+			"place7" : "Luckymarmotte",
+			"place8" : "Maître Cornichon"
 		},
 		{
 			"pod1" : "Hunter",
-			"pod2" : "Elderwood"
+			"pod2" : "Elderwood",
+			"date" : "Vendredi 15 janvier : 21H30",
+			"place1" : "Iluvatarr",
+			"place2" : "iOvz",
+			"place3" : "Ussoper",
+			"place4" : "Zylboxx",
+			"place5" : "Andreaoun",
+			"place6" : "Aelgaid",
+			"place7" : "SupraSky",
+			"place8" : "Maître Cornichon"
 		}
 	],
 
