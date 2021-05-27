@@ -18,7 +18,7 @@ export class DataService {
 
   constructor(private dataBaseProvider: DataBaseProvider) { 
     dataBaseProvider.databaseEmitter.subscribe( result => this.database = result);
-    dataBaseProvider.loadTestDatabse();
+    dataBaseProvider.loadTestDatabase();
   }
 
   databaseCall( method: string ) {

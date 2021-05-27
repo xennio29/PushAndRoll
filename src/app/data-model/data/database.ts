@@ -29,7 +29,7 @@ export class DataBase {
         this._tournamentName = data.tournamentName;
         console.log('[System] Welcome to ' + this._tournamentName);
 
-        this._tournamentId = data._tournamentId;
+        this._tournamentId = data.tournamentId;
         console.log('[System] Tournament Id is ' + this._tournamentId);
 
         this._rules = this.constructRules(data.rules);
