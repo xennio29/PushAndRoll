@@ -5,3 +5,13 @@ mat-sidenav {
     width: 200px;
     background-color: black;
 }
+
+.background {
+    position: fixed;
+    height:100%;
+    width:100%;
+    background-size:cover;
+    background-image:url('./../assets/img/shadow_penguin.jpg');
+    opacity: 0.1;
+    z-index: -1;
+}

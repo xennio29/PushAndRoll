@@ -3,7 +3,9 @@
         <pr-side-bar (sidenavClose)="sidenav.close()"></pr-side-bar>
     </mat-sidenav>
     <mat-sidenav-content>
+        <div class="background"></div>
         <pr-menu-bar (sidenavToggle)="sidenav.toggle()"></pr-menu-bar>
         <router-outlet></router-outlet>
+        
     </mat-sidenav-content>
 </mat-sidenav-container>
