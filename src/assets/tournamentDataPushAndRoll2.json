@@ -127,9 +127,9 @@
 	"players": [
 		{
 			"id": 1,
-			"firstName": "canard",
-			"lastName": "",
-			"pseudo": "FoiGras2Canard"
+			"firstName": "camille",
+			"lastName": "POTTIER",
+			"pseudo": "Xennio"
 		},
 		{
 			"id": 2,
@@ -169,9 +169,9 @@
 		},
 		{
 			"id": 8,
-			"firstName": "orga",
-			"lastName": "UN",
-			"pseudo": "organisateur"
+			"firstName": "Quentin",
+			"lastName": "POTTIER",
+			"pseudo": "Iluvatar"
 		}
 	],
 
@@ -195,15 +195,33 @@
 	"allMatchs" : [
 		{
 			"description" : "Ronde 1",
-			"matchs" : []
+			"matchs" : [
+				{
+					"pod1" : "Assassin",
+					"pod2" : "Brawler",
+					"date" : "Mercredi 02 juin : 20H00"
+				},
+				{
+					"pod1" : "Assassin",
+					"pod2" : "Brawler",
+					"date" : "Mercredi 02 juin : 21H00"
+				}
+			]
 		},
 		{
 			"description" : "Ronde 2",
-			"matchs" : []
-		},
-		{
-			"description" : "Ronde 3",
-			"matchs" : []
+			"matchs" : [
+				{
+					"pod1" : "Assassin",
+					"pod2" : "Brawler",
+					"date" : "Jeudi 03 juin : 20H00"
+				},
+				{
+					"pod1" : "Assassin",
+					"pod2" : "Brawler",
+					"date" : "Jeudi 03 juin : 21H00"
+				}
+			]
 		}
 	]
 }
