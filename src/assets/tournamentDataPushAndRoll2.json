@@ -130,7 +130,7 @@
 			"firstName": "camille",
 			"lastName": "POTTIER",
 			"pseudo": "Xennio",
-			"challenges": ["Teemo heaven"]
+			"challenges": ["Teemo Heaven"]
 		},
 		{
 			"id": 2,
@@ -142,7 +142,8 @@
 			"id": 3,
 			"firstName": "Jérémy",
 			"lastName": "JOUET",
-			"pseudo": "Xeyway"
+			"pseudo": "Xeyway",
+			"challenges": ["Miss Calculation"]
 		},
 		{
 			"id": 4,
@@ -154,7 +155,8 @@
 			"id": 5,
 			"firstName": "Feth-Allah",
 			"lastName": "BENTOUMI",
-			"pseudo": "DKingyo"
+			"pseudo": "DKingyo",
+			"challenges": ["Fight!", "Miss Calculation"]
 		},
 		{
 			"id": 6,
@@ -244,7 +246,15 @@
 				{
 					"pod1" : "Assassin",
 					"pod2" : "Brawler",
-					"date" : "Jeudi 03 juin : 21H00"
+					"date" : "Jeudi 03 juin : 21H00",
+					"place1" : "Iluvatar",
+					"place2" : "Xennio",
+					"place3" : "SupraSky",
+					"place4" : "14thGhost",
+					"place5" : "Xeyway",
+					"place6" : "Yieras",
+					"place7" : "DKingyo",
+					"place8" : "Starliight71"
 				}
 			]
 		}
