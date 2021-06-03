@@ -129,7 +129,8 @@
 			"id": 1,
 			"firstName": "camille",
 			"lastName": "POTTIER",
-			"pseudo": "Xennio"
+			"pseudo": "Xennio",
+			"challenges": ["Teemo heaven"]
 		},
 		{
 			"id": 2,
@@ -230,7 +231,15 @@
 				{
 					"pod1" : "Assassin",
 					"pod2" : "Brawler",
-					"date" : "Jeudi 03 juin : 20H00"
+					"date" : "Jeudi 03 juin : 20H00",
+					"place1" : "14thGhost",
+					"place2" : "Iluvatar",
+					"place3" : "Xeyway",
+					"place4" : "Yieras",
+					"place5" : "Xennio",
+					"place6" : "DKingyo",
+					"place7" : "SupraSky",
+					"place8" : "Starliight71"
 				},
 				{
 					"pod1" : "Assassin",
