@@ -95,8 +95,7 @@ class RankPlayer {
     this.pseudo = player.pseudo;
     this.score = 0;
     if (player.challenges) {
-
-      // TODO add new challenge
+      player.challenges.forEach( challenge => this.score = this.score + 1)
     }
   }
 
