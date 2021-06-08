@@ -1,5 +1,5 @@
-import { EventEmitter } from '@angular/core';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Challenge } from '../model/challenge';
 import { Player } from '../model/player';
@@ -16,9 +16,31 @@ export class DataService {
   /* The database once it's import. */
   private database: DataBase = null;
 
-  constructor(private dataBaseProvider: DataBaseProvider) { 
+  private tournamentId: String = "";
+
+  constructor(private dataBaseProvider: DataBaseProvider, private router: Router) { 
     dataBaseProvider.databaseEmitter.subscribe( result => this.database = result);
-    dataBaseProvider.loadTestDatabase();
+  }
+
+  selectDatabase(databaseLabel: string): boolean {
+    if (this.tournamentId !== databaseLabel) {
+      switch (databaseLabel) {
+        case "ToulouseLeVrai":
+          this.dataBaseProvider.loadToulouseDatabase();
+          this.tournamentId = databaseLabel;
+          return true
+        case "Nantes":
+          this.dataBaseProvider.loadNantesDatabase();
+          this.tournamentId = databaseLabel;
+          return true
+        case "Testing":
+          this.dataBaseProvider.loadTestDatabase();
+          this.tournamentId = databaseLabel;
+          return true
+        default: 
+          return false;
+      }
+    }
   }
 
   databaseCall( method: string ) {

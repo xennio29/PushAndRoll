@@ -1,3 +1,4 @@
+import { variable } from "@angular/compiler/src/output/output_ast";
 import { Challenge } from "../model/challenge";
 import { Match } from "../model/match";
 import { OriginOrClassList } from "../model/OriginOrClass";
@@ -30,6 +31,7 @@ export class DataBase {
         console.log('[System] Welcome to ' + this._tournamentName);
 
         this._tournamentId = data.tournamentId;
+        console.error('tournament id should be with the name of the json no inner the json itself, cause it is create two variable, one in JSON and one in name')
         console.log('[System] Tournament Id is ' + this._tournamentId);
 
         this._rules = this.constructRules(data.rules);

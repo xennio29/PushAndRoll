@@ -1,7 +1,5 @@
 import { HttpClient } from "@angular/common/http";
 import { EventEmitter, Injectable } from "@angular/core";
-import { createHash } from "crypto";
-import { Observable } from "rxjs";
 import { OriginOrClassList } from "../model/OriginOrClass";
 import { DataBase } from "./database";
 
@@ -38,9 +36,11 @@ export class DataBaseProvider {
     }
 }
 
-faire une méthode badass avec simplement un string en entrée (secrétement l'id du tournoi)
- et faire fouiller le dossier asset à la recherche des database et si y'en a une qui match l'id on la charge sinon on createHash.
- Du coup le load et dynamic et y'a rien à faire.
 
- 
-}
+// TODO plus tard
+
+// faire une méthode badass avec simplement un string en entrée (secrétement l'id du tournoi)
+// et faire fouiller le dossier asset à la recherche des database et si y'en a une qui match l'id on la charge sinon on crash -> go to default home page
+// Du coup le load et dynamic et y'a rien à faire.
+// et c'est badass et c'est pas si dur.
+// mais il faut un dossier spécifique dans assets et une id écrite dans le titre du JSON

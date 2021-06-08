@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DatabaseGuard } from './data-model/data/database.guard';
 import { GlobalHomeComponent } from './global-home/global-home.component';
 import { HomeComponent } from './home/home.component';
 import { MatchsComponent } from './matchs/matchs.component';
@@ -12,26 +13,26 @@ import { RulesComponent } from './rules/rules.component';
 
 export const routes: Routes = [
 
-  {path: ':TournamentId/participants', component: ParticipantsComponent },
+  {path: ':tournamentId/participants', component: ParticipantsComponent, canActivate: [DatabaseGuard]},
 
-  {path: ':TournamentId/rules', component: RulesComponent },
+  {path: ':tournamentId/rules', component: RulesComponent, canActivate: [DatabaseGuard]},
 
-  {path: ':TournamentId/pods', component: PodsComponent },
+  {path: ':tournamentId/pods', component: PodsComponent, canActivate: [DatabaseGuard]},
 
-  {path: ':TournamentId/planning', component: PlanningComponent },
+  {path: ':tournamentId/planning', component: PlanningComponent, canActivate: [DatabaseGuard]},
 
-  {path: ':TournamentId/matchs', component: MatchsComponent },
+  {path: ':tournamentId/matchs', component: MatchsComponent, canActivate: [DatabaseGuard]},
 
-  {path: ':TournamentId/rankings', component: RankingsComponent },
+  {path: ':tournamentId/rankings', component: RankingsComponent, canActivate: [DatabaseGuard]},
 
-  { path: ':TournamentId/home', component: HomeComponent },
+  { path: ':tournamentId/home', component: HomeComponent, canActivate: [DatabaseGuard]},
 
-  { path: 'home', component: GlobalHomeComponent }, // FIX ME temporal option, need to work on that
+  { path: 'home', component: GlobalHomeComponent}, // FIX ME temporal option, need to work on that
 
-  { path: '404NotFound', component: NotFound404Component }, // TODO workd on visual
+  { path: '404NotFound', component: NotFound404Component}, // TODO workd on visual
 
-  { path: '', redirectTo: '404NotFound', pathMatch: 'full' },
-  { path: '**', redirectTo: '404NotFound', pathMatch: 'full' },
+  { path: '', redirectTo: '404NotFound', pathMatch: 'full'},
+  { path: '**', redirectTo: '404NotFound', pathMatch: 'full'},
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { DataService } from '../data-model/data/data.service';
 
 @Component({
   selector: 'pr-side-bar',
@@ -8,13 +9,17 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SideBarComponent implements OnInit {
 
   whiteLogo = 'assets/img/white_logo.png';
+  tournamentId: string;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   @Output() public sidenavClose = new EventEmitter();
 
 
   ngOnInit(): void {
+    this.dataService.getTournamentId().subscribe(result => {
+      this.tournamentId = result;
+    })
   }
 
   public onSidenavClose = () => {
