@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Push and Roll';
+
+  backgroundPath = 'assets/img/shadow_penguin.jpg';
 }
