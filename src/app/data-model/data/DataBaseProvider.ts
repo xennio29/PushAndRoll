@@ -17,7 +17,7 @@ export class DataBaseProvider {
     constructor(private http: HttpClient, private originOrClassList: OriginOrClassList) {}
 
     public loadDatabase(): void {
-        this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/tournamentDataPushAndRoll2.json').subscribe(data => {
+        this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/tournamentDataPushAndRoll3.json').subscribe(data => {
             const dataBase = new DataBase(data, this.originOrClassList);
             this.databaseEmitter.emit(dataBase);
         });
