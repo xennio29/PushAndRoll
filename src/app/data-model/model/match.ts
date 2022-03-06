@@ -16,6 +16,7 @@ export class Match {
 
     constructor(
         date: string,
+        matchName: string,
         players: Player[],
         place1?: string,
         place2?: string,
@@ -27,7 +28,7 @@ export class Match {
         place8?: string,
     ) {
 
-        this.matchName = "test";
+        this.matchName = matchName;
         this.players = players;
         this.date = date;
 

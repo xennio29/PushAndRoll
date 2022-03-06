@@ -20,11 +20,9 @@ export class DataBase {
     private _challenges: Challenge[];
     private _allMatchs : Round[]
 
-    private originOrClassList: OriginOrClassList;
+    private mappedPlayers: Map<string, Player>;
 
-    constructor(data: any, originOrClassList: OriginOrClassList) {
-
-        this.originOrClassList = originOrClassList;
+    constructor(data: any) {
         
         this._tournamentName = data.tournamentName;
         console.log('[System] Welcome to ' + this._tournamentName);
@@ -37,6 +35,8 @@ export class DataBase {
 
         this._players = this.constructPlayers(data.players);
         console.log('[System] ' + this._players.length + ' players imported.');
+
+        this.mappedPlayers = this.fromPlayerArrayToPlayerMap(this._players); 
 
         this._allMatchs = this.constructAllMatchs(data.allMatchs);
         console.log('[System] ' + this._allMatchs.length + ' rounds imported.');
@@ -127,9 +127,12 @@ export class DataBase {
     //////////////////////
 
     private constructAllMatchs(allMatchs): Round[] {
-        const tournamentRounds: Round[] = [];
-        allMatchs.forEach(round => tournamentRounds.push(this.toRoundDomain(round)));
-        return tournamentRounds;
+        if (allMatchs != undefined) {
+            const tournamentRounds: Round[] = [];
+            allMatchs.forEach(round => tournamentRounds.push(this.toRoundDomain(round)));
+            return tournamentRounds;
+        }
+        return this.mockAllMatchs();
     }
 
     private toRoundDomain(round): Round {
@@ -154,4 +157,91 @@ export class DataBase {
         match.place8
         );
     }
+
+    
+    private fromPlayerArrayToPlayerMap(players: Player[]): Map<string, Player> {
+        const map = new Map<string, Player>();
+        players.forEach( player => map.set(player.pseudo, player));
+        return map;
+    }
+
+    // MOCK MATCHS
+    //////////////////////////////
+
+    private mockAllMatchs(): Round[]  {
+        const tournamentRounds: Round[] = [];
+
+        const round1 = this.mockRound1();
+        tournamentRounds.push(round1);
+
+        const round2 = this.mockRound1();
+        tournamentRounds.push(round2);
+
+        return tournamentRounds;
+    }
+
+    private mockRound1():Round {
+        const round1Matchs = this.mockRound1Matchs();
+        const round1 = new Round(
+            "First Round",
+            round1Matchs
+        );
+        return round1;
+    }
+
+    private mockRound2():Round {
+        const round2Matchs = this.mockRound2Matchs();
+        const round2 = new Round(
+            "Second Round",
+            round2Matchs
+        );
+        return round2;
+    }
+
+    private mockRound1Matchs() {
+        const round1Matchs: Match[] = [];
+
+        const round1Match1 = this.mockRound1Match1();
+        round1Matchs.push(round1Match1);
+
+        const round1Match2 = this.mockRound1Match2();
+        round1Matchs.push(round1Match2);
+
+        return round1Matchs;
+    }
+
+    private mockRound1Match1() {
+        const players = [
+            this.mappedPlayers.get("Xennio"),
+            this.mappedPlayers.get("14thGhost"),
+            this.mappedPlayers.get("Xeyway"),
+            this.mappedPlayers.get("SupraSky"),
+            this.mappedPlayers.get("DKingyo"),
+            this.mappedPlayers.get("Starliight71"),
+            this.mappedPlayers.get("Yieras"),
+            this.mappedPlayers.get("Iluvatar"),
+        ]
+        this.mappedPlayers.get("test")
+        return new Match("16 mars - 20h", "Match 1 of Round 1", players);
+    }
+
+    private mockRound1Match2() {
+        const players = [
+            this.mappedPlayers.get("Xennio2"),
+            this.mappedPlayers.get("14thGhost2"),
+            this.mappedPlayers.get("Xeyway2"),
+            this.mappedPlayers.get("SupraSky2"),
+            this.mappedPlayers.get("DKingyo2"),
+            this.mappedPlayers.get("Starliight712"),
+            this.mappedPlayers.get("Yieras2"),
+            this.mappedPlayers.get("Iluvatar2"),
+        ]
+        this.mappedPlayers.get("test")
+        return new Match("16 mars - 20h", "Match 2 of Round 1", players);
+    }
+
+    private mockRound2Matchs() {
+        return null;
+    }
+
 }

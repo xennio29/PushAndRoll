@@ -14,11 +14,11 @@ export class DataBaseProvider {
 
     public databaseEmitter: EventEmitter<DataBase> = new EventEmitter();
 
-    constructor(private http: HttpClient, private originOrClassList: OriginOrClassList) {}
+    constructor(private http: HttpClient) {}
 
     public loadDatabase(): void {
         this.http.get<any>('https://raw.githubusercontent.com/xennio29/PushAndRoll/data/src/assets/tournamentDataPushAndRoll3.json').subscribe(data => {
-            const dataBase = new DataBase(data, this.originOrClassList);
+            const dataBase = new DataBase(data);
             this.databaseEmitter.emit(dataBase);
         });
     }
