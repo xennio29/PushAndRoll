@@ -134,31 +134,5 @@
 			"lastName": "POTTIER",
 			"pseudo": "Iluvatar"
 		}
-	],
-
-	"allMatchs" : [
-		{
-			"description" : "Ronde 1",
-			"matchs" : [
-				{
-					"date" : "Mercredi 16 mars",
-					"joueurs" : [
-
-					]
-				},
-				{
-					"date" : "Mercredi 23 mars",
-					"place1" : "Xeyway",
-					"joueurs" : [
-						
-					]
-				}
-			]
-		},
-		{
-			"description" : "Ronde 2",
-			"matchs" : [
-			]
-		}
 	]
 }
