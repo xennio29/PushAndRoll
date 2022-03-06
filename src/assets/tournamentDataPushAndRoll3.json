@@ -90,8 +90,7 @@
 			"id": 1,
 			"firstName": "camille",
 			"lastName": "POTTIER",
-			"pseudo": "Xennio",
-			"challenges": ["Teemo Heaven"]
+			"pseudo": "Xennio"
 		},
 		{
 			"id": 2,
@@ -103,8 +102,7 @@
 			"id": 3,
 			"firstName": "Jérémy",
 			"lastName": "JOUET",
-			"pseudo": "Xeyway",
-			"challenges": ["Miss Calculation"]
+			"pseudo": "Xeyway"
 		},
 		{
 			"id": 4,
@@ -116,8 +114,7 @@
 			"id": 5,
 			"firstName": "Feth-Allah",
 			"lastName": "BENTOUMI",
-			"pseudo": "DKingyo",
-			"challenges": ["Fight!", "Miss Calculation"]
+			"pseudo": "DKingyo"
 		},
 		{
 			"id": 6,

@@ -37,9 +37,6 @@ export class DataBase {
 
         this._players = this.constructPlayers(data.players);
         console.log('[System] ' + this._players.length + ' players imported.');
-    
-        this._pods = this.constructPods(data.pods);
-        console.log('[System] ' + this._pods.length + ' pods imported.');
 
         this._allMatchs = this.constructAllMatchs(data.allMatchs);
         console.log('[System] ' + this._allMatchs.length + ' rounds imported.');
@@ -81,7 +78,9 @@ export class DataBase {
 
     private constructChallenges(challenges): Challenge[] {
         const tournamentChallenges: Challenge[] = [];
-        challenges.forEach(challenge => tournamentChallenges.push(this.toChallengeDomain(challenge)));
+        if (challenges !== undefined) {
+            challenges.forEach(challenge => tournamentChallenges.push(this.toChallengeDomain(challenge)));
+        }
         return tournamentChallenges;
     }
 
@@ -124,67 +123,6 @@ export class DataBase {
         );
     }
 
-    // POD CONSTRUCTION
-    //////////////////////
-
-    private constructPods(pods): Pod[] {
-        const tournamentPods: Pod[] = [];
-        pods.forEach(pod => tournamentPods.push(this.toPodDomain(pod)));
-
-        this.checkDoublons(tournamentPods);
-        this.checkNoPodPlayer(tournamentPods);
-        return tournamentPods;
-    }
-
-    private toPodDomain(pod): Pod {
-        return new Pod(
-        this.originOrClassList.getByName(pod.OriginOrClass),
-        this.getPlayerPseudoFromId(pod.player1),
-        this.getPlayerPseudoFromId(pod.player2),
-        this.getPlayerPseudoFromId(pod.player3),
-        this.getPlayerPseudoFromId(pod.player4),
-        );
-    }
-
-    private getPlayerPseudoFromId(playerId: number): string {
-        const player = this._players.find( player => player.id === playerId);
-
-        if(player) {
-        return player.pseudo;
-        } else {
-        console.error('[DATA ERROR FOR POD]: wrong playerID : ', playerId);
-        return undefined;
-        }
-    }
-
-    private checkDoublons(tournamentPods: Pod[]) {
-
-        const allPlayer: string[] = [];
-
-        tournamentPods.forEach(pod => {
-        pod.playersPseudo.forEach(playerPseudo => {
-            if(allPlayer.indexOf(playerPseudo) === -1) {
-            allPlayer.push(playerPseudo);
-            } else {
-            console.error('[DATA ERROR FOR POD]: player', playerPseudo, 'in more than one pod');
-            }
-        });
-        });
-    }
-
-    private checkNoPodPlayer (tournamentPods: Pod[]) {
-        const players = [...this._players];
-
-        tournamentPods.forEach(pod => {
-
-            pod.playersPseudo.forEach(playerPseudo => players.splice(players.findIndex(player => player.pseudo === playerPseudo), 1));
-        });
-
-        if (players.length !== 0) {
-            console.error('[DATA ERROR FOR PLAYER]: No pod for this player', players);
-        }
-    }
-
     // MATCH CONSTRUCTION
     //////////////////////
 
@@ -204,11 +142,7 @@ export class DataBase {
     }
 
     private toMatchDomain(match): Match {
-        const pod1 = this.getPodFromOriginOrClass(match.pod1);
-        const pod2 = this.getPodFromOriginOrClass(match.pod2);
         return new Match(
-        pod1,
-        pod2,
         match.date,
         match.place1,
         match.place2,
@@ -219,14 +153,5 @@ export class DataBase {
         match.place7,
         match.place8
         );
-    }
-
-    private getPodFromOriginOrClass(originOrClassName): Pod {
-        const currentOriginOrClass = this.originOrClassList.getByName(originOrClassName);
-        const currentPod = this._pods.find(pod => pod.originOrClass === currentOriginOrClass);
-        if (currentPod === null || currentPod === undefined) {
-        console.error('No pod named ' + originOrClassName + 'found.');
-        }
-        return currentPod;
     }
 }
