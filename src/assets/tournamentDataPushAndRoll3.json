@@ -88,99 +88,33 @@
 	"players": [
 		{
 			"id": 1,
-			"firstName": "camille",
+			"firstName": "Camille",
 			"lastName": "POTTIER",
 			"pseudo": "Xennio"
 		},
 		{
 			"id": 2,
-			"firstName": "Douli",
-			"lastName": "ABDALLAH",
-			"pseudo": "14thGhost"
-		},
-		{
-			"id": 3,
-			"firstName": "Jérémy",
-			"lastName": "JOUET",
-			"pseudo": "Xeyway"
-		},
-		{
-			"id": 4,
-			"firstName": "Thibault",
-			"lastName": "JANSSEN",
-			"pseudo": "SupraSky"
-		},
-		{
-			"id": 5,
 			"firstName": "Feth-Allah",
 			"lastName": "BENTOUMI",
 			"pseudo": "DKingyo"
 		},
 		{
-			"id": 6,
+			"id": 3,
 			"firstName": "Antoine",
 			"lastName": "LABORDE",
 			"pseudo": "Starliight71"
 		},
 		{
-			"id": 7,
+			"id": 4,
+			"firstName": "Jérémy",
+			"lastName": "JOUET",
+			"pseudo": "Xeyway"
+		},
+		{
+			"id": 5,
 			"firstName": "Yann",
 			"lastName": "SITBON",
 			"pseudo": "Yieras"
-		},
-		{
-			"id": 8,
-			"firstName": "Quentin",
-			"lastName": "POTTIER",
-			"pseudo": "Iluvatar"
-		},
-		{
-			"id": 9,
-			"firstName": "camille",
-			"lastName": "POTTIER",
-			"pseudo": "Xennio2"
-		},
-		{
-			"id": 10,
-			"firstName": "Douli",
-			"lastName": "ABDALLAH",
-			"pseudo": "14thGhost2"
-		},
-		{
-			"id": 11,
-			"firstName": "Jérémy",
-			"lastName": "JOUET",
-			"pseudo": "Xeyway2"
-		},
-		{
-			"id": 12,
-			"firstName": "Thibault",
-			"lastName": "JANSSEN",
-			"pseudo": "SupraSky2"
-		},
-		{
-			"id": 13,
-			"firstName": "Feth-Allah",
-			"lastName": "BENTOUMI",
-			"pseudo": "DKingyo2"
-		},
-		{
-			"id": 14,
-			"firstName": "Antoine",
-			"lastName": "LABORDE",
-			"pseudo": "Starliight712"
-		},
-		{
-			"id": 15,
-			"firstName": "Yann",
-			"lastName": "SITBON",
-			"pseudo": "Yieras2"
-		},
-		{
-			"id": 16,
-			"firstName": "Quentin",
-			"lastName": "POTTIER",
-			"pseudo": "Iluvatar2"
 		}
 	]
 }

@@ -174,7 +174,7 @@ export class DataBase {
         const round1 = this.mockRound1();
         tournamentRounds.push(round1);
 
-        const round2 = this.mockRound1();
+        const round2 = this.mockRound2();
         tournamentRounds.push(round2);
 
         return tournamentRounds;
@@ -198,7 +198,7 @@ export class DataBase {
         return round2;
     }
 
-    private mockRound1Matchs() {
+    private mockRound1Matchs(): Match[] {
         const round1Matchs: Match[] = [];
 
         const round1Match1 = this.mockRound1Match1();
@@ -207,41 +207,50 @@ export class DataBase {
         const round1Match2 = this.mockRound1Match2();
         round1Matchs.push(round1Match2);
 
+        const round1Match3 = this.mockRound1Match3();
+        round1Matchs.push(round1Match3);
+
         return round1Matchs;
     }
 
     private mockRound1Match1() {
         const players = [
             this.mappedPlayers.get("Xennio"),
-            this.mappedPlayers.get("14thGhost"),
-            this.mappedPlayers.get("Xeyway"),
-            this.mappedPlayers.get("SupraSky"),
             this.mappedPlayers.get("DKingyo"),
             this.mappedPlayers.get("Starliight71"),
-            this.mappedPlayers.get("Yieras"),
-            this.mappedPlayers.get("Iluvatar"),
+            this.mappedPlayers.get("Xeyway"),
+            this.mappedPlayers.get("Yieras")
         ]
         this.mappedPlayers.get("test")
-        return new Match("16 mars - 20h", "Match 1 of Round 1", players);
+        return new Match("16 mars - 20h30", "Match 1 of Round 1", players);
     }
 
     private mockRound1Match2() {
         const players = [
-            this.mappedPlayers.get("Xennio2"),
-            this.mappedPlayers.get("14thGhost2"),
-            this.mappedPlayers.get("Xeyway2"),
-            this.mappedPlayers.get("SupraSky2"),
-            this.mappedPlayers.get("DKingyo2"),
-            this.mappedPlayers.get("Starliight712"),
-            this.mappedPlayers.get("Yieras2"),
-            this.mappedPlayers.get("Iluvatar2"),
+            this.mappedPlayers.get("Xennio"),
+            this.mappedPlayers.get("DKingyo"),
+            this.mappedPlayers.get("Starliight71"),
+            this.mappedPlayers.get("Xeyway"),
+            this.mappedPlayers.get("Yieras")
         ]
         this.mappedPlayers.get("test")
-        return new Match("16 mars - 20h", "Match 2 of Round 1", players);
+        return new Match("16 mars - 21h30", "Match 2 of Round 1", players);
     }
 
-    private mockRound2Matchs() {
-        return null;
+    private mockRound1Match3() {
+        const players = [
+            this.mappedPlayers.get("Xennio"),
+            this.mappedPlayers.get("DKingyo"),
+            this.mappedPlayers.get("Starliight71"),
+            this.mappedPlayers.get("Xeyway"),
+            this.mappedPlayers.get("Yieras")
+        ]
+        this.mappedPlayers.get("test")
+        return new Match("16 mars - 22h30", "Match 3 of Round 1", players);
+    }
+
+    private mockRound2Matchs(): Match[] {
+        return [];
     }
 
 }
