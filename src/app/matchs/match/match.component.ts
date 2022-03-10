@@ -22,15 +22,8 @@ export class MatchComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
-    const originAndClassPod1 = this.match.pod1.originOrClass;
-    const originAndClassPod2 = this.match.pod2.originOrClass;
-
-    this.matchName = originAndClassPod1.getFrenchName() + ' and ' + originAndClassPod2.getFrenchName()
-                + ' // ' + originAndClassPod1.getEnglishName() + ' et ' + originAndClassPod2.getEnglishName();
-
+    this.matchName = this.match.matchName;
     this.matchDate = this.match.date;
-
     this.generateDataSource();
   }
 
@@ -52,21 +45,13 @@ export class MatchComponent implements OnInit {
       if(this.match.place8) {
         playerScores.push(new PlayerScore(this.match.place8, 8));
       }
-      
-
       playerScores.sort( (a, b) => a.playerRank - b.playerRank);
 
     } else {
-      const playersPseudos = this.match.pod1.playersPseudo.concat(this.match.pod2.playersPseudo);
-      playersPseudos.forEach( name => playerScores.push(new PlayerScore(name, undefined)));
-
+      this.match.players.forEach( player => playerScores.push(new PlayerScore(player.pseudo, undefined)));
     }
-
     this.dataSource = new MatTableDataSource<PlayerScore>(playerScores);
-
-
   }
-
 }
 
 class PlayerScore {

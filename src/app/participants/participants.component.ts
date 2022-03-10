@@ -14,7 +14,7 @@ export class ParticipantsComponent {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  displayedColumns = ['name', 'pseudo', 'challenges'];
+  displayedColumns = ['name', 'pseudo'];
 
   participants: Player[] = [];
   challenges: Challenge[] = [];

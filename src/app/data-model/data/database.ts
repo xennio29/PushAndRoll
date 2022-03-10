@@ -20,11 +20,9 @@ export class DataBase {
     private _challenges: Challenge[];
     private _allMatchs : Round[]
 
-    private originOrClassList: OriginOrClassList;
+    private mappedPlayers: Map<string, Player>;
 
-    constructor(data: any, originOrClassList: OriginOrClassList) {
-
-        this.originOrClassList = originOrClassList;
+    constructor(data: any) {
         
         this._tournamentName = data.tournamentName;
         console.log('[System] Welcome to ' + this._tournamentName);
@@ -37,9 +35,8 @@ export class DataBase {
 
         this._players = this.constructPlayers(data.players);
         console.log('[System] ' + this._players.length + ' players imported.');
-    
-        this._pods = this.constructPods(data.pods);
-        console.log('[System] ' + this._pods.length + ' pods imported.');
+
+        this.mappedPlayers = this.fromPlayerArrayToPlayerMap(this._players); 
 
         this._allMatchs = this.constructAllMatchs(data.allMatchs);
         console.log('[System] ' + this._allMatchs.length + ' rounds imported.');
@@ -81,7 +78,9 @@ export class DataBase {
 
     private constructChallenges(challenges): Challenge[] {
         const tournamentChallenges: Challenge[] = [];
-        challenges.forEach(challenge => tournamentChallenges.push(this.toChallengeDomain(challenge)));
+        if (challenges !== undefined) {
+            challenges.forEach(challenge => tournamentChallenges.push(this.toChallengeDomain(challenge)));
+        }
         return tournamentChallenges;
     }
 
@@ -124,74 +123,16 @@ export class DataBase {
         );
     }
 
-    // POD CONSTRUCTION
-    //////////////////////
-
-    private constructPods(pods): Pod[] {
-        const tournamentPods: Pod[] = [];
-        pods.forEach(pod => tournamentPods.push(this.toPodDomain(pod)));
-
-        this.checkDoublons(tournamentPods);
-        this.checkNoPodPlayer(tournamentPods);
-        return tournamentPods;
-    }
-
-    private toPodDomain(pod): Pod {
-        return new Pod(
-        this.originOrClassList.getByName(pod.OriginOrClass),
-        this.getPlayerPseudoFromId(pod.player1),
-        this.getPlayerPseudoFromId(pod.player2),
-        this.getPlayerPseudoFromId(pod.player3),
-        this.getPlayerPseudoFromId(pod.player4),
-        );
-    }
-
-    private getPlayerPseudoFromId(playerId: number): string {
-        const player = this._players.find( player => player.id === playerId);
-
-        if(player) {
-        return player.pseudo;
-        } else {
-        console.error('[DATA ERROR FOR POD]: wrong playerID : ', playerId);
-        return undefined;
-        }
-    }
-
-    private checkDoublons(tournamentPods: Pod[]) {
-
-        const allPlayer: string[] = [];
-
-        tournamentPods.forEach(pod => {
-        pod.playersPseudo.forEach(playerPseudo => {
-            if(allPlayer.indexOf(playerPseudo) === -1) {
-            allPlayer.push(playerPseudo);
-            } else {
-            console.error('[DATA ERROR FOR POD]: player', playerPseudo, 'in more than one pod');
-            }
-        });
-        });
-    }
-
-    private checkNoPodPlayer (tournamentPods: Pod[]) {
-        const players = [...this._players];
-
-        tournamentPods.forEach(pod => {
-
-            pod.playersPseudo.forEach(playerPseudo => players.splice(players.findIndex(player => player.pseudo === playerPseudo), 1));
-        });
-
-        if (players.length !== 0) {
-            console.error('[DATA ERROR FOR PLAYER]: No pod for this player', players);
-        }
-    }
-
     // MATCH CONSTRUCTION
     //////////////////////
 
     private constructAllMatchs(allMatchs): Round[] {
-        const tournamentRounds: Round[] = [];
-        allMatchs.forEach(round => tournamentRounds.push(this.toRoundDomain(round)));
-        return tournamentRounds;
+        if (allMatchs != undefined) {
+            const tournamentRounds: Round[] = [];
+            allMatchs.forEach(round => tournamentRounds.push(this.toRoundDomain(round)));
+            return tournamentRounds;
+        }
+        return this.mockAllMatchs();
     }
 
     private toRoundDomain(round): Round {
@@ -204,11 +145,7 @@ export class DataBase {
     }
 
     private toMatchDomain(match): Match {
-        const pod1 = this.getPodFromOriginOrClass(match.pod1);
-        const pod2 = this.getPodFromOriginOrClass(match.pod2);
         return new Match(
-        pod1,
-        pod2,
         match.date,
         match.place1,
         match.place2,
@@ -221,12 +158,99 @@ export class DataBase {
         );
     }
 
-    private getPodFromOriginOrClass(originOrClassName): Pod {
-        const currentOriginOrClass = this.originOrClassList.getByName(originOrClassName);
-        const currentPod = this._pods.find(pod => pod.originOrClass === currentOriginOrClass);
-        if (currentPod === null || currentPod === undefined) {
-        console.error('No pod named ' + originOrClassName + 'found.');
-        }
-        return currentPod;
+    
+    private fromPlayerArrayToPlayerMap(players: Player[]): Map<string, Player> {
+        const map = new Map<string, Player>();
+        players.forEach( player => map.set(player.pseudo, player));
+        return map;
     }
+
+    // MOCK MATCHS
+    //////////////////////////////
+
+    private mockAllMatchs(): Round[]  {
+        const tournamentRounds: Round[] = [];
+
+        const round1 = this.mockRound1();
+        tournamentRounds.push(round1);
+
+        const round2 = this.mockRound2();
+        tournamentRounds.push(round2);
+
+        return tournamentRounds;
+    }
+
+    private mockRound1():Round {
+        const round1Matchs = this.mockRound1Matchs();
+        const round1 = new Round(
+            "First Round",
+            round1Matchs
+        );
+        return round1;
+    }
+
+    private mockRound2():Round {
+        const round2Matchs = this.mockRound2Matchs();
+        const round2 = new Round(
+            "Second Round",
+            round2Matchs
+        );
+        return round2;
+    }
+
+    private mockRound1Matchs(): Match[] {
+        const round1Matchs: Match[] = [];
+
+        const round1Match1 = this.mockRound1Match1();
+        round1Matchs.push(round1Match1);
+
+        const round1Match2 = this.mockRound1Match2();
+        round1Matchs.push(round1Match2);
+
+        const round1Match3 = this.mockRound1Match3();
+        round1Matchs.push(round1Match3);
+
+        return round1Matchs;
+    }
+
+    private mockRound1Match1() {
+        const players = [
+            this.mappedPlayers.get("Xennio"),
+            this.mappedPlayers.get("DKingyo"),
+            this.mappedPlayers.get("Starliight71"),
+            this.mappedPlayers.get("Xeyway"),
+            this.mappedPlayers.get("Yieras")
+        ]
+        this.mappedPlayers.get("test")
+        return new Match("16 mars - 20h30", "Match 1 of Round 1", players);
+    }
+
+    private mockRound1Match2() {
+        const players = [
+            this.mappedPlayers.get("Xennio"),
+            this.mappedPlayers.get("DKingyo"),
+            this.mappedPlayers.get("Starliight71"),
+            this.mappedPlayers.get("Xeyway"),
+            this.mappedPlayers.get("Yieras")
+        ]
+        this.mappedPlayers.get("test")
+        return new Match("16 mars - 21h30", "Match 2 of Round 1", players);
+    }
+
+    private mockRound1Match3() {
+        const players = [
+            this.mappedPlayers.get("Xennio"),
+            this.mappedPlayers.get("DKingyo"),
+            this.mappedPlayers.get("Starliight71"),
+            this.mappedPlayers.get("Xeyway"),
+            this.mappedPlayers.get("Yieras")
+        ]
+        this.mappedPlayers.get("test")
+        return new Match("16 mars - 22h30", "Match 3 of Round 1", players);
+    }
+
+    private mockRound2Matchs(): Match[] {
+        return [];
+    }
+
 }
